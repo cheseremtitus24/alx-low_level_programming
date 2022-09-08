@@ -7,3 +7,5 @@
 4-puts.c - prints out a string using puts 
 5-printf.c - prints out a string using printf
 6-size.c - prints the respective sizes of a char, int, long int , long long int and a float respectively.
+100-intel - generates assembly code tailored to the intel cputype.
+101-quote.c - prints a string using the write function.
