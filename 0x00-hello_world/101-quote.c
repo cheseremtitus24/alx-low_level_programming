@@ -13,7 +13,7 @@
  * int strlen = 5;
  * write(1,str,5);
  *
- * Return: Always 0 (Success)
+ * Return: Always 1 (Failure)
  */
 int main(void)
 {
