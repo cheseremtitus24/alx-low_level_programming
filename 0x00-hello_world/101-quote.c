@@ -17,15 +17,15 @@
  */
 int main(void)
 {
-	char *str = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
-	char *strptr;
-	int strchars = 0;
 
-	for (strptr = str; *strptr != '\0'; *strptr++)
+	char str[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	int i = 0;
+	while (str[i] != '\0')
 	{
-		strchars++;
+		i++;
 	}
-	write(1, str, strchars);
+
+	write(1, str, i);
 
 	return (0);
 }
