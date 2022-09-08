@@ -28,5 +28,5 @@ int main(void)
 
 	write(1, str, i);
 
-	return (0);
+	return (1);
 }
