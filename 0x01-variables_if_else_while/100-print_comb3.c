@@ -19,7 +19,6 @@ int main(void)
 	{
 		for (a = 48; a <= 57; a++)
 		{
-
 			/**
 			 *  for combinations is based on order and
 			 *  always the preceding value should always
@@ -31,8 +30,17 @@ int main(void)
 			{
 				putchar(c);
 				putchar(a);
-				putchar(' ');
+				if (c == 56)
+				{
+					/* Doing Nothing */
+					continue;
+				}
+				else
+				{
+					putchar(',');
+					putchar(' ');
 
+				}
 			}
 
 		}
