@@ -19,16 +19,8 @@ int main(void)
 	{
 
 		putchar(c);
-		if (c == 57)
-		{
-			/*putchar('$');*/
-			/*write(0,"$",1);*/
-		}
-		else
-		{
-			putchar(',');
-			putchar(' ');
-		}
+		putchar(',');
+		putchar(' ');
 		c++;
 
 	}
@@ -36,7 +28,6 @@ int main(void)
 
 	/* Write the Character to stdout */
 	putchar('\n');
-	/*write(1,"\n",2);*/
 
 	return (0);
 }
