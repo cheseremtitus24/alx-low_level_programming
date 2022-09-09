@@ -9,7 +9,7 @@ This repository consists of a set of scripts that help to understand basic and c
 
 ### Who uses # alx-low_level_programming ?
 
-This repository hosts contents that are are essential to young budding programmers and also an important reminder to system level programmers by serving as a reminder of the basics that have been long forgotten. 
+This repository hosts contents that are essential to young budding programmers and also an important reminder to system level programmers by serving as a reminder of the basics that have been long forgotten. 
 
 ### What is # alx-low_level_programming's goal?
 
