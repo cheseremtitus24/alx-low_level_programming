@@ -5,7 +5,7 @@
 /**
  * main - Entry point
  *
- * Description: The program prints 10C2- 10-Combination-2 
+ * Description: The program prints 10C2- "10" -Combination-'2'
  * numbers from 0-9
  * Return: Always 0 (Success)
  */
@@ -13,12 +13,11 @@
 
 int main(void)
 {
-	int c = 48;
-	int b = 48;
+	int a, b, c = 48;
 
 	for (; c <= 57; c++)
 	{
-		for (int a = 48; a <= 57; a++)
+		for (a = 48; a <= 57; a++)
 		{
 
 			/**
