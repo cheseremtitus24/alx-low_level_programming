@@ -5,7 +5,7 @@
 /**
  * main - Entry point
  *
- * Description: The program prints decimal 
+ * Description: The program prints decimal
  * numbers from 0-9
  * Return: Always 0 (Success)
  */

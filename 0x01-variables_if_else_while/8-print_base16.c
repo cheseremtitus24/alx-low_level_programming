@@ -6,7 +6,7 @@
  *
  * Description: The program prints all the numbers
  * of base 16.
- * Example: 0123456789abcdef 
+ * Example: 0123456789abcdef
  * Return: Always 0 (Success)
  */
 

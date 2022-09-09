@@ -5,7 +5,7 @@
 /**
  * main - Entry point
  *
- * Description: The program prints decimals 
+ * Description: The program prints decimals
  * that are comma and space separated
  * Return: Always 0 (Success)
  */
@@ -19,7 +19,7 @@ int main(void)
 	{
 
 		putchar(c);
-		if (c==57)
+		if (c == 57)
 		{
 			putchar('$');
 		}
