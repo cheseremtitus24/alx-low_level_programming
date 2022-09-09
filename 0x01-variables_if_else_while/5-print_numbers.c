@@ -5,7 +5,7 @@
 /**
  * main - Entry point
  *
- * Description: The program prints decimal 
+ * Description: The program prints decimal
  * digits from 0-9
  * Return: Always 0 (Success)
  */
@@ -18,7 +18,7 @@ int main(void)
 	while (c >= 0 && c <= 9)
 	{
 
-		printf("%d",c);
+		printf("%d", c);
 		c++;
 
 	}
