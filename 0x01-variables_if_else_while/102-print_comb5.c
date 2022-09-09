@@ -20,19 +20,15 @@ int main(void)
 		for (a = 48; a <= 57; a++)
 		{
 			/**
-			 *  for combinations is based on order and
+			 *  combinations is based on order and
 			 *  always the preceding value should always
-			 *  be smaller than the successor 02 12.
-			 *  12 02 violates this rule since the predecessor is bigger than
-			 *  the successor.
+			 *  be smaller than the successor 02 12. Violates 12 02
 			 */
-
 			for (b = 48; b <= 57; b++)
 			{
 				for (d = 48; d <= 57; d++)
 				{
-
-					if ((c + a) < (b + d) )
+					if ((c + a) < (b + d))
 					{
 						putchar(c);
 						putchar(a);
@@ -50,15 +46,11 @@ int main(void)
 					}
 
 					}
-
 				}
-
 			}
-
 		}
 	}
 	/* Write the Character to stdout */
 	putchar('\n');
-
 	return (0);
 }
