@@ -37,7 +37,7 @@ int main(void)
 						putchar(d);
 					if (a == 56 && c == 57 && b == 57 && d == 57)
 					{
-						continue;
+						//continue;
 					}
 					else
 					{
