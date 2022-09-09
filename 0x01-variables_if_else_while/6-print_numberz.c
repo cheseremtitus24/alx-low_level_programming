@@ -13,9 +13,9 @@
 
 int main(void)
 {
-	char c = '0';
+	short int c = 48;
 
-	while (c >= '0' && c <= '9')
+	while (c >= 48 && c <= 57)
 	{
 
 		putchar(c);
