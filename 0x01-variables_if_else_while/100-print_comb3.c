@@ -13,7 +13,7 @@
 
 int main(void)
 {
-	int a, b, c = 48;
+	int a, c = 48;
 
 	for (; c <= 57; c++)
 	{
