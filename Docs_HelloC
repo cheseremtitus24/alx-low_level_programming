@@ -93,5 +93,65 @@ int a; /* comments */
    {
         return (nb > 0);
    }
-6. Documentation of Data Structures
+6. Preventing Double inclusion when Importing Header files to main program. Guidelines;
+filename: sample_header.h
 
+#ifndef _SAMPLE_HEADER_H_
+#define _SAMPLE_HEADER_H_
+
+/*
+ * Structs, enums and unions definitions
+ * Typedefs
+ * Function prototypes
+ */
+
+#endif /* _SAMPLE_HEADER_H_ */
+
+7. Documentation of Data Structures
+
+Structs - Documentation (within Header files)
+/**
+ * struct my_struct - Short description
+ * @a: First member - Description
+ * @b: Second member - Description
+ * @c: Third member - Description
+ *
+ * Description: Longer description
+ * Example: some example of how this struct is used
+ */
+struct my_struct
+{
+	int a;
+	int b;
+	int c;
+};
+
+Alternatively you can Document as exemplified below for Long and Complex Structs
+
+/**
+ * struct my_struct - Short description
+ * @a: First member
+ * @b: Second member
+ *
+ * Description: Longer description
+ */
+struct my_struct
+{
+	int a;
+	int b;
+	/**
+	 * @c: This is longer description of C
+	 *
+	 * Description: You can use paragraphs to describe arguments
+	 * using this method.
+	 */
+	int c;
+};
+
+### NOTE: Use above to document enums and structs only
+
+# For - Enums you can use the following
+/**
+ * u_int - Typedef for unsigned int
+ */
+typedef unsigned int u_int;
