@@ -1,0 +1,23 @@
+man abs 
+#### Tranlation to C-Code ### 
+
+#include <stdlib.h>
+#include <stdio.h>
+
+int main()
+{
+       int j = -2;
+       long int k = 89700089;
+       unsigned long long int l = 8970008989841;
+
+       printf("%d\n",(int) abs(j));
+       /* int abs(int j); */
+       
+       printf("%ld\n", (long int) llabs(k));
+       /* long int labs(long int j); */
+       
+       printf("%lld\n", (unsigned long long int) llabs(l));
+       /* long long int llabs(long long int j); */
+       
+       return (0);
+}

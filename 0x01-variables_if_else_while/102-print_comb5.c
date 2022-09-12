@@ -28,7 +28,7 @@ int main(void)
 			{
 				for (d = 48; d <= 57; d++)
 				{
-					if ((c + a) < (b + d))
+					if ((c * 10 + a) < (b * 10 + d))
 					{
 						putchar(c);
 						putchar(a);
@@ -37,7 +37,7 @@ int main(void)
 						putchar(d);
 					if (a == 56 && c == 57 && b == 57 && d == 57)
 					{
-						//continue;
+						continue;
 					}
 					else
 					{
