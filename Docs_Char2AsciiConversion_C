@@ -1,7 +1,12 @@
 Using the Below program you can be able to perform Ascii to integerger conversions.
 
 #include <stdio.h>
-
+/**
+  * main - Program Entry point
+  * 
+  * Description: Converts characters to ascii integer value equivalents
+  * Return: 0 (success) always.
+  */
 int main()
 {
         char val = '-';
