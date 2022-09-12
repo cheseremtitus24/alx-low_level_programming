@@ -1,0 +1,11 @@
+Using the Below program you can be able to perform Ascii to integerger conversions.
+
+#include <stdio.h>
+
+int main()
+{
+        char val = '-';
+        printf("Integer Equivalent of %c is %d", val,val);
+        
+        return 0;
+}
