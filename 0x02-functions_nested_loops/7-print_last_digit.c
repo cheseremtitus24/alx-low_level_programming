@@ -1,27 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
 
-/**
-  * main - Entry point of the Program
-  *
-  * Description: Prints an integer's absolute value that is
-  * end delimited by a new line
-  *
-  * Return: 0 always.
-  */
-
-int main(void)
-{
-	int r;
-
-	print_last_digit(98);
-	print_last_digit(0);
-	r = print_last_digit(-1024);
-	_putchar('0' + r);
-	_putchar('\n');
-
-	return (0);
-}
 
 /**
  * _abs- Function that checks if a character is lowecase

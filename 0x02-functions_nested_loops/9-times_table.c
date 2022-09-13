@@ -2,19 +2,6 @@
 #include <stdio.h>
 
 /**
-  * main - Entry point of the Program
-  *
-  * Description: Outputs multiples of 9 by 0-9
-  *
-  * Return: 0 always.
-  */
-
-int main(void)
-{
-	times_table();
-	return (0);
-}
-/**
  * times_table - Function prints time in '24' hour system
  *
  * Description - Prints multiples of 9 from 0 through 9

@@ -1,19 +1,6 @@
 #include "main.h"
 #include <time.h> /* needed in order to use sleep() function */
 
-/**
-  * main - Entry point of the Program
-  *
-  * Description: Outputs a timer from midnight to 1 minute before midnight
-  *
-  * Return: 0 always.
-  */
-
-int main(void)
-{
-	jack_bauer();
-	return (0);
-}
 
 /**
  * jack_bauer- Function prints time in '24' hour system

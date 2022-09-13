@@ -2,27 +2,6 @@
 #include <ctype.h>
 
 /**
-  * main - Entry point of the Program
-  *
-  * Description: Prints the string _putchar and is end delimited by a new line
-  *
-  * Return: 0 always.
-  */
-
-int main(void)
-{
-	int r;
-
-	r = _islower('H');
-	_putchar(r + '0');
-	r = _islower('o');
-	_putchar(r + '0');
-	r = _islower(108);
-	_putchar(r + '0');
-	_putchar('\n');
-	return (0);
-}
-/**
  * _islower- Function that checks if a character is lowecase
  * @c: is a a character that is to be checked
  *
