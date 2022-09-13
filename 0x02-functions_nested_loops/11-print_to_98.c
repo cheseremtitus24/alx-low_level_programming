@@ -15,7 +15,6 @@
 void
 print_to_98(int n)
 {
-  int row, column;
   int counter = 48;
   int indexer = 0;
   int asciilookup[10];
@@ -96,7 +95,7 @@ print_to_98(int n)
 	      if (count < 0)
 		_putchar('-');
 	      _putchar(asciilookup[first]);
-	      if (count <= 0 && count > -10 || count > 0 && count < 10)
+	      if (((count <= 0) && (count > -10)) || ((count > 0) && (count < 10)))
 		{
 		  _putchar(',');
 		  _putchar(' ');
@@ -138,7 +137,6 @@ print_to_98(int n)
 void
 extractTriNums(int x, int *first, int *mid, int *last)
 {
-  int temp;
   while (x >= 10)
     {
       if (x > 100)
