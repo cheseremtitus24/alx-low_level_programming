@@ -30,6 +30,7 @@ int print_last_digit(int n)
 {
 	int absolute = _abs(n);
 	int lastnum = absolute % 10;
+	
 	lastnum = _abs(lastnum);
 
 	_putchar('0' + lastnum);
