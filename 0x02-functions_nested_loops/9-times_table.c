@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <unistd.h>
 
 /**
  * times_table - Function prints time in '24' hour system
@@ -51,5 +52,5 @@ void times_table(void)
 		}
 		_putchar('\n');
 	}
-		write(1,"\n",1);
+		write(1, "\n" , 1);
 }
