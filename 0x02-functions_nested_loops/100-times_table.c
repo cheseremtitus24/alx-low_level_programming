@@ -18,12 +18,14 @@ print_times_table (int n)
   int counter;
   int asciilookup[10];
   int hlval = 0;
+  counter = hlval;
 
   for (counter = 48; counter <= 57; counter++)
     {
       asciilookup[indexer] = counter;
       indexer++;
     }
+  
 
   for (row = 0; row <= n; row++)
     {
