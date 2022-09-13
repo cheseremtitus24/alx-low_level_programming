@@ -11,64 +11,68 @@
  * Return: void
  */
 
-void print_times_table(int n)
+void
+print_times_table (int n)
 {
-	int multiply, hlval, row, column, indexer, first, lmid, fmid, mid, last, counter = 0;
-	int asciilookup[10];
+  int row, column, indexer, first, lmid, fmid, mid, last = 0;
+  int counter;
+  int asciilookup[10];
+  int hlval = 0;
 
-	for (counter = 48; counter <= 57; counter++)
-	{
-		asciilookup[indexer] = counter;
-		indexer++;
-	}
+  for (counter = 48; counter <= 57; counter++)
+    {
+      asciilookup[indexer] = counter;
+      indexer++;
+    }
 
-	for (row = 0; row <= n; row++)
+  for (row = 0; row <= n; row++)
+    {
+      for (column = 0; column <= n; column++)
 	{
-		for (column = 0; column <= n; column++)
+	  int multiply = row * column;
+	  if (multiply > 999)
+	    {
+	      extractQuadNums (multiply, &first, &fmid, &lmid, &last);
+	      _putchar (asciilookup[first]);
+	      _putchar (asciilookup[fmid]);
+	      _putchar (asciilookup[lmid]);
+	      _putchar (asciilookup[last]);
+
+	    }
+	  else if (multiply > 99 && multiply <= 999)
+	    {
+
+	      extractTriNums (multiply, &first, &mid, &last);
+	      _putchar (asciilookup[first]);
+	      _putchar (asciilookup[mid]);
+	      _putchar (asciilookup[last]);
+	    }
+	  else if (multiply > 9 && multiply <= 99)
+	    {
+	      extractBiNums (multiply, &first, &last);
+	      _putchar (asciilookup[first]);
+	      _putchar (asciilookup[last]);
+	    }
+	  else if (multiply >= 0 && multiply <= 9)
+	    {
+	      int hlval = multiply % 10;	/* Gets the last digit */
+	      /*int hfval = multiply / 10;  Gets the first digit */
+	      if (column != 0)
 		{
-			multiply = row * column;
-
-			if (multiply > 999)
-			{
-				extractQuadNums(multiply, &first, &fmid, &lmid, &last);
-				_putchar(asciilookup[first]);
-				_putchar(asciilookup[fmid]);
-				_putchar(asciilookup[lmid]);
-				_putchar(asciilookup[last]);
-
-			}
-			else if (multiply > 99 && multiply <= 999)
-			{
-				extractTriNums(multiply, &first, &mid, &last);
-				_putchar(asciilookup[first]);
-				_putchar(asciilookup[mid]);
-				_putchar(asciilookup[last]);
-			}
-			else if (multiply > 9 && multiply <= 99)
-			{
-				extractBiNums(multiply, &first, &last);
-				_putchar(asciilookup[first]);
-				_putchar(asciilookup[last]);
-			}
-			else if (multiply >= 0 && multiply <= 9)
-			{
-				hlval = multiply % 10; /* Gets the last digit*/
-
-				if (column  != 0)
-				{
-					_putchar(' ');
-				}
-				_putchar(asciilookup[hlval]);
-			}
-
-			if (column != n)
-			{
-				_putchar(',');
-				_putchar(' ');
-			}
+		  _putchar (' ');
 		}
-		_putchar('\n');
+	      _putchar (asciilookup[hlval]);
+
+	    }
+
+	  if (column != n)
+	    {
+	      _putchar (',');
+	      _putchar (' ');
+	    }
 	}
+      _putchar ('\n');
+    }
 }
 
 /**
@@ -83,26 +87,28 @@ void print_times_table(int n)
  * Example extractQuadNums(9687,first,fmid,lmid,last) --> 9, 6, 8, 7
  * Return: void
  */
-void extractQuadNums(int x, int *first, int *fmid, int *lmid, int *last)
+void
+extractQuadNums (int x, int *first, int *fmid, int *lmid, int *last)
 {
-	while (x >= 10)
+  while (x >= 10)
+    {
+      if (x > 999)
 	{
-		if (x > 999)
-		{
-			*last = x % 10;    /* Gets last digit */
-		}
-		x = x / 10;    /* Gets the first digit */
-		/* Middle value*/
-		if (x > 10)
-		{
-			*fmid = x % 10;
-		}
-		if (x > 99)
-		{
-			*lmid = x % 10;
-		}
+	  *last = x % 10;	/* Gets last digit */
 	}
-	*first = x;
+      x = x / 10;		/* Gets the first digit */
+      /* Middle value */
+      if (x > 10)
+	{
+	  *fmid = x % 10;
+	}
+      if (x > 99)
+	{
+
+	  *lmid = x % 10;
+	}
+    }
+  *first = x;
 
 }
 
@@ -118,21 +124,22 @@ void extractQuadNums(int x, int *first, int *fmid, int *lmid, int *last)
  * Example extractTriNums(968,first,mid,last) --> 9, 6, 8
  * Return: void
  */
-void extractTriNums(int x, int *first, int *mid, int *last)
+void
+extractTriNums (int x, int *first, int *mid, int *last)
 {
-	while (x >= 10)
+  while (x >= 10)
+    {
+      if (x > 100)
 	{
-		if (x > 100)
-		{
-			*last = x % 10;	/* Gets last digit */
-		}
-		x = x / 10;		/* Gets the first digit */
-		if (x >= 10)
-		{
-			*mid = x % 10;
-		}
+	  *last = x % 10;	/* Gets last digit */
 	}
-	*first = x;
+      x = x / 10;		/* Gets the first digit */
+      if (x >= 10)
+	{
+	  *mid = x % 10;
+	}
+    }
+  *first = x;
 }
 
 /**
@@ -146,13 +153,14 @@ void extractTriNums(int x, int *first, int *mid, int *last)
  * Return: void
  */
 
-void extractBiNums(int x, int *first, int *last)
+void
+extractBiNums (int x, int *first, int *last)
 {
 
-	while (x >= 10)
-	{
-		*last = x % 10;		/* Gets last digit */
-		x = x / 10;		/* Gets the first digit */
-	}
-	*first = x;
+  while (x >= 10)
+    {
+      *last = x % 10;		/* Gets last digit */
+      x = x / 10;		/* Gets the first digit */
+    }
+  *first = x;
 }
