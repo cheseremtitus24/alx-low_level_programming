@@ -52,7 +52,7 @@ void print_times_table(int n)
 			}
 			else if (multiply >= 0 && multiply <= 9)
 			{
-				int hlval = multiply % 10; /* Gets the last digit*/
+				hlval = multiply % 10; /* Gets the last digit*/
 
 				if (column  != 0)
 				{
