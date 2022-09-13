@@ -11,74 +11,122 @@
  * Return: void
  */
 
-void
-print_times_table (int n)
+void print_times_table(int n)
 {
-  int row, column, indexer, first, lmid, fmid, mid, last = 0;
-  int counter;
-  int asciilookup[10];
-  int hlval = 0;
-  counter = hlval;
+	int row, column, indexer, first, lmid, fmid, mmid, mid, last = 0;
+	int counter;
+	int asciilookup[10];
+	int hlval = 0;
 
-  for (counter = 48; counter <= 57; counter++)
-    {
-      asciilookup[indexer] = counter;
-      indexer++;
-    }
-  
+	counter = hlval;
 
-  for (row = 0; row <= n; row++)
-    {
-      for (column = 0; column <= n; column++)
+	for (counter = 48; counter <= 57; counter++)
 	{
-	  int multiply = row * column;
-	  if (multiply > 999)
-	    {
-	      extractQuadNums (multiply, &first, &fmid, &lmid, &last);
-	      _putchar (asciilookup[first]);
-	      _putchar (asciilookup[fmid]);
-	      _putchar (asciilookup[lmid]);
-	      _putchar (asciilookup[last]);
-
-	    }
-	  else if (multiply > 99 && multiply <= 999)
-	    {
-
-	      extractTriNums (multiply, &first, &mid, &last);
-	      _putchar (asciilookup[first]);
-	      _putchar (asciilookup[mid]);
-	      _putchar (asciilookup[last]);
-	    }
-	  else if (multiply > 9 && multiply <= 99)
-	    {
-	      extractBiNums (multiply, &first, &last);
-	      _putchar (' ');
-	      _putchar (asciilookup[first]);
-	      _putchar (asciilookup[last]);
-	    }
-	  else if (multiply >= 0 && multiply <= 9)
-	    {
-	      int hlval = multiply % 10;	/* Gets the last digit */
-	      /*int hfval = multiply / 10;  Gets the first digit */
-	      if (column != 0)
-		{
-		  _putchar (' ');
-		  _putchar (' ');
-		}
-	      _putchar (asciilookup[hlval]);
-
-	    }
-
-	  if (column != n)
-	    {
-	      _putchar (',');
-	      _putchar (' ');
-	    }
+		asciilookup[indexer] = counter;
+		indexer++;
 	}
-      _putchar ('\n');
-    }
+
+	for (row = 0; row <= n; row++)
+	{
+		for (column = 0; column <= n; column++)
+		{
+			int multiply = row * column;
+
+			if (multiply >= 10000)
+			{
+				extractPedraNums(multiply, &first, &fmid, &mmid, &lmid, &last);
+				_putchar(asciilookup[first]);
+				_putchar(asciilookup[fmid]);
+				_putchar(asciilookup[mmid]);
+				_putchar(asciilookup[lmid]);
+				_putchar(asciilookup[last]);
+
+			}
+			else if (multiply > 999 && multiply < 10000)
+			{
+				extractQuadNums(multiply, &first, &fmid, &lmid, &last);
+				_putchar(asciilookup[first]);
+				_putchar(asciilookup[fmid]);
+				_putchar(asciilookup[lmid]);
+				_putchar(asciilookup[last]);
+
+			}
+			else if (multiply > 99 && multiply <= 999)
+			{
+				extractTriNums(multiply, &first, &mid, &last);
+				_putchar(asciilookup[first]);
+				_putchar(asciilookup[mid]);
+				_putchar(asciilookup[last]);
+			}
+			else if (multiply > 9 && multiply <= 99)
+			{
+				extractBiNums(multiply, &first, &last);
+				_putchar(' ');
+				_putchar(asciilookup[first]);
+				_putchar(asciilookup[last]);
+			}
+			else if (multiply >= 0 && multiply <= 9)
+			{
+				int hlval = multiply % 10;	/* Gets the last digit */
+
+				if (column != 0)
+				{
+					_putchar(' ');
+					_putchar(' ');
+				}
+				_putchar(asciilookup[hlval]);
+			}
+			if (column != n)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
+		}
+		_putchar('\n');
+	}
 }
 
+/**
+ * extractPedraNums - Function captures individual digits making a number
+ * @x: a number between 0 & 99999
+ * @first: the ten thousands digit
+ * @fmid: the thousands digit
+ * @mmid: the hundreds digit
+ * @lmid: the tenths digit
+ * @last: the one's digit
+ *
+ * Description - capture the ones tenths and hundreds digits of a number
+ * Example extractPedraNums(12345,first,fmid,mmid,lmid,last)
+ * --> 1, 2, 3, 4, 5
+ * Return: void
+ */
+void
+extractPedraNums(int x, int *first, int *fmid, int *mmid, int *lmid, int *last)
+{
+	while (x >= 10)
+	{
+		if (x >= 10000)
+		{
+			*last = x % 10;    /* Gets last digit */
+		}
+		x = x / 10;    /* Gets the first digit */
+		/* Middle value*/
+		if (x > 10)
+		{
+			*fmid = x % 10;
+		}
+		if (x >= 999)
+		{
+
+			*lmid = x % 10;
+		}
+		if (x > 99)
+		{
+			*mmid = x % 10;
+		}
+	}
+	*first = x;
+}
 /**
  * extractQuadNums- Function captures individual digits making a number
  * @x: a number between 100 & 999
@@ -91,29 +139,27 @@ print_times_table (int n)
  * Example extractQuadNums(9687,first,fmid,lmid,last) --> 9, 6, 8, 7
  * Return: void
  */
-void
-extractQuadNums (int x, int *first, int *fmid, int *lmid, int *last)
+void extractQuadNums(int x, int *first, int *fmid, int *lmid, int *last)
 {
-  while (x >= 10)
-    {
-      if (x > 999)
+	while (x >= 10)
 	{
-	  *last = x % 10;	/* Gets last digit */
-	}
-      x = x / 10;		/* Gets the first digit */
-      /* Middle value */
-      if (x > 10)
-	{
-	  *fmid = x % 10;
-	}
-      if (x > 99)
-	{
+		if (x > 999)
+		{
+			*last = x % 10;	/* Gets last digit */
+		}
+		x = x / 10;		/* Gets the first digit */
+		/* Middle value */
+		if (x > 10)
+		{
+			*fmid = x % 10;
+		}
+		if (x > 99)
+		{
 
-	  *lmid = x % 10;
+			*lmid = x % 10;
+		}
 	}
-    }
-  *first = x;
-
+	*first = x;
 }
 
 
@@ -129,21 +175,21 @@ extractQuadNums (int x, int *first, int *fmid, int *lmid, int *last)
  * Return: void
  */
 void
-extractTriNums (int x, int *first, int *mid, int *last)
+extractTriNums(int x, int *first, int *mid, int *last)
 {
-  while (x >= 10)
-    {
-      if (x > 100)
+	while (x >= 10)
 	{
-	  *last = x % 10;	/* Gets last digit */
+		if (x > 100)
+		{
+			*last = x % 10;	/* Gets last digit */
+		}
+		x = x / 10;		/* Gets the first digit */
+		if (x >= 10)
+		{
+			*mid = x % 10;
+		}
 	}
-      x = x / 10;		/* Gets the first digit */
-      if (x >= 10)
-	{
-	  *mid = x % 10;
-	}
-    }
-  *first = x;
+	*first = x;
 }
 
 /**
@@ -158,13 +204,12 @@ extractTriNums (int x, int *first, int *mid, int *last)
  */
 
 void
-extractBiNums (int x, int *first, int *last)
+extractBiNums(int x, int *first, int *last)
 {
-
-  while (x >= 10)
-    {
-      *last = x % 10;		/* Gets last digit */
-      x = x / 10;		/* Gets the first digit */
-    }
-  *first = x;
+	while (x >= 10)
+	{
+		*last = x % 10;		/* Gets last digit */
+		x = x / 10;		/* Gets the first digit */
+	}
+	*first = x;
 }
