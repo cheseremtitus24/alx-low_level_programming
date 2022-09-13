@@ -12,9 +12,8 @@
 
 void times_table(void)
 {
-	int row, column;
+	int row, column, indexer = 0;
 	int counter = 48;
-	int indexer = 0;
 	int asciilookup[10];
 
 	for (; counter <= 57; counter++)
@@ -33,7 +32,10 @@ void times_table(void)
 
 			if (multiply < 10)
 			{
-				_putchar(' ');
+				if (column  != 0)
+				{
+					_putchar(' ');
+				}
 				_putchar(asciilookup[hlval]);
 			}
 			else
@@ -41,10 +43,7 @@ void times_table(void)
 				_putchar(asciilookup[hfval]);
 				_putchar(asciilookup[hlval]);
 			}
-			if (column == 9)
-			{
-			}
-			else
+			if (column != 9)
 			{
 				_putchar(',');
 				_putchar(' ');
@@ -52,5 +51,4 @@ void times_table(void)
 		}
 		_putchar('\n');
 	}
-		write(1, "\n" , 1);
 }
