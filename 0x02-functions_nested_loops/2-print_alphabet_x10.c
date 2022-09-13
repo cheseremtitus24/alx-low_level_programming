@@ -1,4 +1,6 @@
 #include "main.h"
+#include "main.h"
+
 
 /**
  * print_alphabet_x10 - Function that prints a-z
@@ -23,5 +25,4 @@ void print_alphabet_x10(void)
 		a = 'a';
 		_putchar('\n');
 	}
-	_putchar('\n');
 }
