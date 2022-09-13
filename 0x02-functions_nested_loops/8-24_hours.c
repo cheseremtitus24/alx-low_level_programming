@@ -1,6 +1,5 @@
 #include "main.h"
-#include <time.h> /* needed in order to use sleep() function */
-
+#include <unistd.h>
 
 /**
  * jack_bauer- Function prints time in '24' hour system
@@ -13,12 +12,11 @@
 void jack_bauer(void)
 {
 	int hour, minute, second;
-
-	hour = minute = second =  0;
 	int counter = 48;
 	int indexer = 0;
 	int asciilookup[10];
 
+	hour = minute = second =  0;
 	for (; counter <= 57; counter++)
 	{
 		asciilookup[indexer] = counter;
