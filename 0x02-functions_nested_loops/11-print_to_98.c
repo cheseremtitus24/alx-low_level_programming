@@ -36,7 +36,7 @@ print_to_98(int n)
     }
   else if (n > 98)
     {
-      for (int count = n; count >= 98; count--)
+      for (count = n; count >= 98; count--)
 	{
 	  if (count <= 99)	/*values less than but equal to 99 */
 	    {
@@ -72,7 +72,7 @@ print_to_98(int n)
   else				/* number is less that 98 */
     {
 
-      for (int count = n; count <= 98; count++)
+      for (count = n; count <= 98; count++)
 	{
 	  if (count <= -100)
 	    {
