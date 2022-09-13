@@ -52,6 +52,7 @@ print_times_table (int n)
 	  else if (multiply > 9 && multiply <= 99)
 	    {
 	      extractBiNums (multiply, &first, &last);
+	      _putchar (' ');
 	      _putchar (asciilookup[first]);
 	      _putchar (asciilookup[last]);
 	    }
@@ -61,6 +62,7 @@ print_times_table (int n)
 	      /*int hfval = multiply / 10;  Gets the first digit */
 	      if (column != 0)
 		{
+		  _putchar (' ');
 		  _putchar (' ');
 		}
 	      _putchar (asciilookup[hlval]);
