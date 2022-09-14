@@ -25,5 +25,14 @@
 
 11-print_to_98.c - outputs counters incrementally or decrementally to 98 based on the starting number.
 
+100-times_table.c - prints the multiplication table of a predefined value and between 0 and 15.
 
+101-natural.c - prints all the numbers divisible by 5 and 3 in the range 1 - 1023
+
+102-fibonacci.c - prints the fibonacci sequence of the first 50 occurring numbers using the PPrev + prev = fibonacci - summation rule.
+
+103-fibonacci.c - prints the sum of even fibonacci numbers than are not greater than 4000000
+
+104-fibonacci.c - prints the first 89 fibonacci sequences using the Golden Ratio constant. You need to compile the program using the following 
  
+*** gcc main.c -lm *** This is because it makes use of round function that is provided by the math library.
