@@ -22,7 +22,7 @@ int main(void)
 		/*printf("%.0f ",b); */
 		printf("%.0f, ", b);
 		}
-		temp = b * goldenRatio;
+		temp = round(b * goldenRatio);
 
 		b = temp;
 		if (i == 49)
