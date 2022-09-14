@@ -13,6 +13,10 @@
 
 void print_times_table(int n)
 {
+	if (n < 0 || n > 15)
+	{
+		return;
+	}
 	int row, column, indexer, first, lmid, fmid, mmid, mid, last = 0;
 	int counter;
 	int asciilookup[10];
@@ -61,7 +65,13 @@ void print_times_table(int n)
 			else if (multiply > 9 && multiply <= 99)
 			{
 				extractBiNums(multiply, &first, &last);
-				_putchar(' ');
+				if (multiply > 999)
+				{
+				}
+				else
+				{
+					_putchar(' ');
+				}
 				_putchar(asciilookup[first]);
 				_putchar(asciilookup[last]);
 			}
@@ -71,15 +81,27 @@ void print_times_table(int n)
 
 				if (column != 0)
 				{
-					_putchar(' ');
-					_putchar(' ');
+					if (multiply > 999)
+					{
+					}
+					else
+					{
+						_putchar(' ');
+						_putchar(' ');
+					}
 				}
 				_putchar(asciilookup[hlval]);
 			}
 			if (column != n)
 			{
 				_putchar(',');
-				_putchar(' ');
+				if (multiply > 999)
+				{
+				}
+				else
+				{
+					_putchar(' ');
+				}
 			}
 		}
 		_putchar('\n');
