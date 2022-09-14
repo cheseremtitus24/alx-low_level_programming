@@ -9,12 +9,12 @@
  */
 int main(void)
 {
-	int i = 0;
+	int i;
 	double b = 1;
-	double temp = 0;
-	double goldenRatio = (sqrt(5) + 1) / 2;
+	double temp;
+	/*double goldenRatio = (sqrt(5) + 1) / 2;*/
 
-	for (; i < 98; i++)
+	for (i = 0; i < 98; i++)
 	{
 		if (i == 0)
 		{
@@ -22,12 +22,12 @@ int main(void)
 		/*printf("%.0f ",b); */
 		printf("%.0f, ", b);
 		}
-		temp = round(b * goldenRatio);
+		temp = round(b * ((sqrt(5) +1) / 2));
 
 		b = temp;
-		if (i == 49)
+		if (i == 97)
 		{
-			printf("%.0f", temp);
+			printf("%.0f\n", temp);
 		}
 		else
 		{

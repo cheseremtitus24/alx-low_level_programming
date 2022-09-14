@@ -9,30 +9,25 @@
  */
 int main(void)
 {
-	int i = 0;
 	double b = 1;
 	double temp = 0;
+	double sumofEvens;
 	double goldenRatio = (sqrt(5) + 1) / 2;
 
-	for (; i < 50; i++)
+	for (; ; )
 	{
-		if (i == 0)
-		{
-		/*printf("%.0f ",a);*/
-		/*printf("%.0f ",b); */
-		printf("%.0f, ", b);
-		}
 		temp = round(b * goldenRatio);
+		if (temp > 4000000)
+		{
+			printf("%.0f\n", sumofEvens);
+			break;
+		}
+		if ((int) temp % 2 == 0) /*is even */
+		{
+			sumofEvens += temp;
+		}
 
 		b = temp;
-		if (i == 49)
-		{
-			printf("%.0f\n", temp);
-		}
-		else
-		{
-			printf("%.0f, ", temp);
-		}
 	}
 	return (0);
 }
