@@ -10,7 +10,6 @@
 int main(void)
 {
 	int i = 0;
-	double a = 0;
 	double b = 1;
 	double temp = 0;
 	double goldenRatio = (sqrt(5) + 1) / 2;
