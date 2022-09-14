@@ -38,5 +38,6 @@ int main(void)
 {
 	fibonacci(50);
 	printf("\n");
+	return (0);
 }
 
