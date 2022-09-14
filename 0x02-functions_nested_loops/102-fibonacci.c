@@ -6,12 +6,12 @@
 * Description- prints fibonacci number starting from 1 2
 * Return: 0 always
 */
-void fibonacci(int n)
+void fibonacci(unsigned int n)
 {
-	unsigned long long int pprev = 0;
-	unsigned long long int prev = 1;
-	unsigned int i;
-	unsigned long long int display;
+	unsigned long int pprev = 0;
+	unsigned long int prev = 1;
+	unsigned long int i;
+	unsigned long int display;
 
 	for (i = 0; i < n; i++)
 	{
@@ -20,10 +20,10 @@ void fibonacci(int n)
 		prev = display;
 		if (i == (n - 1))
 		{
-			printf("%lld", display);
+			printf("%ld", display);
 			continue;
 		}
-		printf("%lld, ", display);
+		printf("%ld, ", display);
 	}
 }
 /**
