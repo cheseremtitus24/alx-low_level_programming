@@ -1,34 +1,46 @@
 ﻿#include <stdio.h>
-#include <math.h>
-
-
 /**
- * main - prints the first 50 fibonacci numbers
- *
- * Return: Always 0.
- */
-int main(void)
+* fibonacci- prints sum of even  fibonacci numbers
+*
+* Description- the fibonacci numbers must be below 4000000
+* Return: 0 always
+*/
+void fibonacci(void)
 {
-	double b = 1;
-	double temp = 0;
-	double sumofEvens;
-	double goldenRatio = (sqrt(5) + 1) / 2;
+	unsigned long int pprev = 0;
+	unsigned long int prev = 1;
+	unsigned long int sum = 0;
+	unsigned long int display;
 
 	for (; ; )
 	{
-		temp = round(b * goldenRatio);
-		if (temp > 4000000)
+		display = pprev + prev;
+		pprev = prev;
+		prev = display;
+		if (display > 4000000)
 		{
-			printf("%.0f\n", sumofEvens);
 			break;
 		}
-		if ((int) temp % 2 == 0) /*is even */
+		if ((display % 2) == 0)
 		{
-			sumofEvens += temp;
-		}
 
-		b = temp;
+			sum += display;
+		}
 	}
+	printf("%ld", sum);
+}
+/**
+* main - Entry Point
+*
+* Description-Calls a function that prints the first n
+* fibonacci numbers
+* Return: 0 always
+*/
+
+int main(void)
+{
+	fibonacci();
+	printf("\n");
 	return (0);
 }
 
