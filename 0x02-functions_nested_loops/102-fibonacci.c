@@ -1,39 +1,42 @@
 ﻿#include <stdio.h>
-#include <math.h>
-
-
 /**
- * main - prints the first 50 fibonacci numbers
- *
- * Return: Always 0.
- */
+* fibonacci- prints fibonacci numbers
+* @n: number of fibonacci numbers
+*
+* Description- prints fibonacci number starting from 1 2
+* Return: 0 always
+*/
+void fibonacci(int n)
+{
+	unsigned long long int pprev = 0;
+	unsigned long long int prev = 1;
+	unsigned int i;
+	unsigned long long int display;
+
+	for (i = 0; i < n; i++)
+	{
+		display = pprev + prev;
+		pprev = prev;
+		prev = display;
+		if (i == (n - 1))
+		{
+			printf("%lld", display);
+			continue;
+		}
+		printf("%lld, ", display);
+	}
+}
+/**
+* main - Entry Point
+*
+* Description-Calls a function that prints the first n
+* fibonacci numbers
+* Return: 0 always
+*/
+
 int main(void)
 {
-	int i = 0;
-	double b = 1;
-	double temp = 0;
-	double goldenRatio = (sqrt(5) + 1) / 2;
-
-	for (; i < 50; i++)
-	{
-		if (i == 0)
-		{
-		/*printf("%.0f ",a);*/
-		/*printf("%.0f ",b); */
-		printf("%.0f, ", b);
-		}
-		temp = round(b * goldenRatio);
-
-		b = temp;
-		if (i == 49)
-		{
-			printf("%.0f\n", temp);
-		}
-		else
-		{
-			printf("%.0f, ", temp);
-		}
-	}
-	return (0);
+	fibonacci(50);
+	printf("\n");
 }
 
