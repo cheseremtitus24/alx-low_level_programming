@@ -13,14 +13,15 @@
 
 void print_times_table(int n)
 {
-	if (n < 0 || n > 15)
-	{
-		return;
-	}
 	int row, column, indexer, first, lmid, fmid, mmid, mid, last = 0;
 	int counter;
 	int asciilookup[10];
 	int hlval = 0;
+
+	if (n < 0 || n > 15)
+	{
+		return;
+	}
 
 	counter = hlval;
 
