@@ -1,22 +1,17 @@
 #include "main.h"
 
 /**
-* positive_or_negative - tests function that prints if
-* integer is positive or negative
-* @i: Number to be checked
-* Description - performs assert test for zero
-* Return: void
+* main - tests function that prints if integer is positive or negative
+* Return: 0
 */
 
-void positive_or_negative(int i)
+int main(void)
 {
-	if (i == 0)
-	{
-		assert(i == 0);
-		printf("%d is zero\n", i);
-	}
-	else if (i > 0)
-		printf("%d is positive\n", i);
-	else
-		printf("%d is negative\n", i);
+	int i;
+
+	i = 98;
+	assert(i == 0);
+	positive_or_negative(i);
+
+	return (0);
 }
