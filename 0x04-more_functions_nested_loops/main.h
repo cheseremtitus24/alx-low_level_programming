@@ -13,6 +13,8 @@ void more_numbers(void);
 void extractBiNums(int x, int *first, int *last);
 void print_line(int n);
 void print_diagonal(int n);
+void print_square(int size);
+void print_triangle(int size);
 /*
  * Structs, enums and unions definitions
  * Typedefs
