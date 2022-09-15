@@ -32,19 +32,16 @@ void more_numbers(void)
 				_putchar(AsciiTable[ones]);
 				_putchar(AsciiTable[tenths]);
 				/* i must be split in two */
-				continue;
 			}
 			else
 			{
 				_putchar(AsciiTable[j]);
 			}
 		}
-		if (i == 9)
-			continue;
 		_putchar('\n');
+
 	}
 
-	_putchar('\n');
 }
 
 /**
