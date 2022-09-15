@@ -28,6 +28,8 @@ int main(void)
 			i == size ? printf("FizzBuzz\n") : printf("FizzBuzz ");
 			continue;
 		}
+		if (i == 1)
+			printf(" ");
 		i == size ? printf("%d\n", i) : printf("%d ", i);
 
 
