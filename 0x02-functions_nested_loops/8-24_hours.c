@@ -26,10 +26,10 @@ void jack_bauer(void)
 	while (1)
 	{
 		/*print time in HH : MM format*/
-		int hlval = minute % 10; /* Gets the last digit*/
-		int hfval = minute / 10; /* Gets the first digit*/
-		int mlval = second % 10;
-		int mfval = second / 10;
+		int hlval = hour % 10; /* Gets the last digit*/
+		int hfval = hour / 10; /* Gets the first digit*/
+		int mlval = minute % 10;
+		int mfval = minute / 10;
 		/* Convert the integer to its ascii equivalent for printing*/
 		_putchar(asciilookup[hfval]);
 		_putchar(asciilookup[hlval]);
