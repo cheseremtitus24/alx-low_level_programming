@@ -38,8 +38,6 @@ void more_numbers(void)
 				_putchar(AsciiTable[j]);
 			}
 		}
-		if (i == 9)
-			continue;
 		_putchar('\n');
 
 	}
