@@ -1,10 +1,8 @@
 #include <stdio.h>
 /**
- * print_square - prints a square
- * @size: number of times to print a square
+ * main - prints a Fizz and Buzz for numbers divisible by 3,5 respectively
  *
- * Description - Function implements the use of write to output
- * character-integer mappings using ASCII Table.
+ * Description - counts from 1 - 100
  * Return: void
  */
 
@@ -13,54 +11,24 @@ int main(void)
 	int i;
 	int size = 100;
 
-
 	for (i = 1; i <= size; i++)
 	{
 		if (i % 3 == 0)
 		{
-			if(i == size)
-			{
-				printf("Fizz\n");
-			}
-			else
-			{
-				printf("Fizz ");
-			}
+			i == size ? printf("Fizz\n") : printf("Fizz ");
 			continue;
 		}
 		else if (i % 5 == 0)
 		{
-			if(i == size)
-			{
-				printf("Buzz\n");
-			}
-			else
-			{
-				printf("Buzz ");
-			}
+			i == size ? printf("Buzz\n") : printf("Buzz ");
 			continue;
 		}
 		else if (i % 5 == 0 && i % 3 == 0)
 		{
-			if(i == size)
-			{
-				printf("FizzBuzz\n");
-			}
-			else
-			{
-				printf("FizzBuzz ");
-			}
+			i == size ? printf("FizzBuzz\n") : printf("FizzBuzz ");
 			continue;
 		}
-		
-			if(i == size)
-			{
-				printf("%d\n",i);
-			}
-			else
-			{
-				printf("%d ",i);
-			}
+		i == size ? printf("%d\n", i) : printf("%d ", i);
 
 
 	}
