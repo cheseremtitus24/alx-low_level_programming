@@ -56,7 +56,7 @@ void jack_bauer(void)
 			minute = 0;
 			second = 0;
 		}
-		sleep(1);              /*system sleep for 1 second*/
+		/*sleep(1);              system sleep for 1 second*/
 		if (minute == 23 && second == 59)
 		{
 			break;
