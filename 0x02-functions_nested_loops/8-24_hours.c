@@ -57,7 +57,7 @@ void jack_bauer(void)
 			second = 0;
 		}
 		/*sleep(1);              system sleep for 1 second*/
-		if hour == 23 && minute == 59)
+		if (hour == 23 && minute == 59)
 		{
 			break;
 		}
