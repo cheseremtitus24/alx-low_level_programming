@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * print_square - prints a square
- * @n: number of times to print a square
+ * @size: number of times to print a square
  *
  * Description - Function implements the use of write to output
  * character-integer mappings using ASCII Table.
