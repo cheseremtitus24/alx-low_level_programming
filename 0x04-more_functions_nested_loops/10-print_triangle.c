@@ -2,12 +2,11 @@
 /**
  * print_triangle - prints a triangle
  * @n: number of times to print the triangle
- *
- * Description - prints the left sided diagonal
+ * description- prints the left sided diagonal
  * Return: void
  */
 
-void print_diagonal(int n)
+void print_triangle(int n)
 {
 	int i;
 	int l;
