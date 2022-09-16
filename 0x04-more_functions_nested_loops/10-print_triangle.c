@@ -1,9 +1,9 @@
 #include "main.h"
 /**
- * print_triangle - prints a triangle 
+ * print_triangle - prints a triangle
  * @n: number of times to print the triangle
  *
- * Description - prints the left sided diagonal 
+ * Description - prints the left sided diagonal
  * Return: void
  */
 
