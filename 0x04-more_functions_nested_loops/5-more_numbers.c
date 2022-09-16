@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 /**
  * more_numbers - prints integers from 0 to 14
  * outputed 10 times
@@ -38,7 +39,7 @@ void more_numbers(void)
 				_putchar(AsciiTable[j]);
 			}
 		}
-		_putchar('\n');
+		write(1, '\n', 1);
 
 	}
 
