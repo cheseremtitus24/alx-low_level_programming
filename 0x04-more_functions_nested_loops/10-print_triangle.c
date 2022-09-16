@@ -17,7 +17,7 @@ void print_triangle(int n)
 		exit(0);
 	}
 
-	for (i = 0; i <= n; i++)
+	for (i = 1; i <= n; i++)
 	{
 		for (l = i; l < n; l++)
 		{
