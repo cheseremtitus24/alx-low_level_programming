@@ -5,12 +5,12 @@
  *
  * Description- Outputs a string to stdout
  *
- * Return: void 
+ * Return: void
  */
 void _puts(char *str)
-{		
+{
 	int i;
-	
+
 	for (i = 0; i <= strlen(str); i++)
 	{
 		_putchar(str[i]);
