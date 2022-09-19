@@ -8,16 +8,9 @@
 
 void swap_int(int *a, int *b)
 {
-	/* int * - pointer declaration */
-	int *ip1;
-	int *ip2;
 	int tmp;
-	/* assign value of pointer - contains address of passed in int a,b */
-	ip1 = a;
-	ip2 = b;
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 
-	/*Dereference our local integer pointers to swap values*/
-	tmp = *ip1;
-	*ip1 = *ip2;
-	*ip1 = tmp;
 }
