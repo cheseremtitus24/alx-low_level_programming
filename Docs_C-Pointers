@@ -1,0 +1,154 @@
+Pointers and Variable Addresses.
+
+#Note: A byte has 8 bits therefore a 
+char[2bytes] has a range of 2^8.
+
+On most 64 bit machines the size of pointers is 
+8 bytes.
+
+#include <stdio.h>
+
+/**
+ * main - derefencing pointers
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+   int n;
+   int *p;
+
+   n = 98;
+   p = &n;
+   printf("Value of 'n': %d\n", n);
+   printf("Address of 'n': %p\n", &n);
+   printf("Value of 'p': %p\n", p);
+   *p = 402;
+   printf("Value of 'n': %d\n", n);
+   return (0);
+}
+ubuntu@ip-172-31-63-244:~/julien$ gcc 5-main.c -o dereference && ./dereference
+Value of 'n': 98
+Address of 'n': 0x7ffd9c1969a4
+Value of 'p': 0x7ffd9c1969a4
+Value of 'n': 402
+
+at declaration, it is used to declare a variable of type pointer to something. Example: int *n;
+when used inside the code it is used to dereference pointers. Example *n = 98;
+
+## Pass value to function by Reference 
+cat 7-main.c
+#include <stdio.h>
+
+/**
+ * modif_my_param - set the integer to 402
+ * @m: a pointer the integer we want to set to 402
+ *
+ * Return: nothing
+ */
+void modif_my_param(int *m)
+{
+   printf("Value of 'm': %p\n", m);
+   printf("Address of 'm': %p\n", &m);
+   *m = 402;
+}
+
+/**
+ * main - how to change the value of a variable from outside the function
+ * it is declared in, using a pointer.
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+   int n;
+   int *p;
+
+   p = &n;
+   n = 98;
+   printf("Value of 'n' before the call: %d\n", n);
+   printf("Address of 'n': %p\n", &n);
+   printf("Value of 'p': %p\n", p);
+   printf("Address of 'p': %p\n", &p);
+   modif_my_param(p);
+   printf("Value of 'n' after the call: %d\n", n);
+   return (0);
+}
+ubuntu@ip-172-31-63-244:~/julien$ gcc 7-main.c -o modify_param && ./modify_param
+Value of 'n' before the call: 98
+Address of 'n': 0x7ffd70432494
+Value of 'p': 0x7ffd70432494
+Address of 'p': 0x7ffd70432498
+Value of 'm': 0x7ffd70432494
+Address of 'm': 0x7ffd70432478
+Value of 'n' after the call: 402
+
+## Pointers to array are allowed as long as the 
+array and the pointer are of the same type
+
+ubuntu@ip-172-31-63-244:~/julien$ cat 17-main.c
+#include <stdio.h>
+void f(int *a);
+
+/**
+ * main - Illustrating the array type decay
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+   int *p;
+   int t[10];
+
+   p = t; /* This works because of the auto implicit conversion to (int *) */
+   printf("t: %p\n", t);
+   printf("&t[0]: %p\n", &t[0]);
+   printf("p: %p\n", p);
+   f(t);
+   return (0);
+}
+
+/**
+ * f - prints the value of a pointer of type int
+ * @a: address of an integer we need to print
+ *
+ * Return: Nothing.
+ */
+void f(int *a)
+{
+   printf("a: %p\n", a);
+   return;
+}
+ubuntu@ip-172-31-63-244:~/julien$ gcc 17-main.c && ./a.out
+t: 0x7ffd553e7380
+&t[0]: 0x7ffd553e7380
+p: 0x7ffd553e7380
+a: 0x7ffd553e7380
+
+ ### Pointer to Internal Array and PTR to Address of Array
+#include <stdio.h>
+
+/**
+ * main - prints the size of an array and the address of an array
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+   char b[98];
+
+   printf("b: %p\n", b);
+   printf("&b: %p\n", &b);
+   printf("sizeof(b): %lu\n", sizeof(b));
+   printf("sizeof(&b): %lu\n", sizeof(&b));
+   return (0);
+}
+ubuntu@ip-172-31-63-244:~/julien/curriculum_by_julien/low_level_programming/pointers$ gcc 19-main.c && ./a.out
+b: 0x7ffe0b9c62f0
+&b: 0x7ffe0b9c62f0
+sizeof(b): 98
+sizeof(&b): 8
+
+### Array Pointer Arithmetic
+a[0] == *a
+a[1] == *(a+1)
