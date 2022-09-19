@@ -1,3 +1,4 @@
+#include "main.h"
 #include <string.h>
 /**
  * _puts - Outputs a string
@@ -9,7 +10,7 @@
  */
 void _puts(char *str)
 {
-	int i;
+	long unsigned int i;
 
 	for (i = 0; i <= strlen(str); i++)
 	{
