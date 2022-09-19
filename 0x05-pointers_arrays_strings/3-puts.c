@@ -12,9 +12,16 @@ void _puts(char *str)
 {
 	unsigned long int i;
 
-	for (i = 0; i <= strlen(str)-1; i++)
+	if (strlen(str) < 2)
 	{
-		_putchar(str[i]);
+		_putchar('\n');
 	}
-	_putchar('\n');
+	else
+	{
+		for (i = 0; i <= strlen(str) - 1; i++)
+		{
+			_putchar(str[i]);
+		}
+		_putchar('\n');
+	}
 }
