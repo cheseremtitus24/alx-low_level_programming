@@ -82,4 +82,47 @@ Address of 'p': 0x7ffd70432498
 Value of 'm': 0x7ffd70432494
 Address of 'm': 0x7ffd70432478
 Value of 'n' after the call: 402
+
+## Pointers to array are allowed as long as the 
+array and the pointer are of the same type
+
+ubuntu@ip-172-31-63-244:~/julien$ cat 17-main.c
+#include <stdio.h>
+void f(int *a);
+
+/**
+ * main - Illustrating the array type decay
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+   int *p;
+   int t[10];
+
+   p = t; /* This works because of the auto implicit conversion to (int *) */
+   printf("t: %p\n", t);
+   printf("&t[0]: %p\n", &t[0]);
+   printf("p: %p\n", p);
+   f(t);
+   return (0);
+}
+
+/**
+ * f - prints the value of a pointer of type int
+ * @a: address of an integer we need to print
+ *
+ * Return: Nothing.
+ */
+void f(int *a)
+{
+   printf("a: %p\n", a);
+   return;
+}
+ubuntu@ip-172-31-63-244:~/julien$ gcc 17-main.c && ./a.out
+t: 0x7ffd553e7380
+&t[0]: 0x7ffd553e7380
+p: 0x7ffd553e7380
+a: 0x7ffd553e7380
+
  
