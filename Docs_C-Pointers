@@ -1,0 +1,8 @@
+Pointers and Variable Addresses.
+
+#Note: A byte has 8 bits therefore a 
+char[2bytes] has a range of 2^8.
+
+On most 64 bit machines the size of pointers is 
+8 bytes.
+
