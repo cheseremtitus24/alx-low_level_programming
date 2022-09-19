@@ -1,0 +1,19 @@
+#include <string.h>
+/**
+ * _puts - Outputs a string
+ * @str: string to print
+ *
+ * Description- Outputs a string to stdout
+ *
+ * Return: void 
+ */
+void _puts(char *str)
+{		
+	int i;
+	
+	for (i = 0; i <= strlen(str); i++)
+	{
+		_putchar(str[i]);
+	}
+	_putchar('\n');
+}
