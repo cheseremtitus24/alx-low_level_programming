@@ -125,4 +125,27 @@ t: 0x7ffd553e7380
 p: 0x7ffd553e7380
 a: 0x7ffd553e7380
 
- 
+ ### Pointer to Internal Array and PTR to Address of Array
+#include <stdio.h>
+
+/**
+ * main - prints the size of an array and the address of an array
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+   char b[98];
+
+   printf("b: %p\n", b);
+   printf("&b: %p\n", &b);
+   printf("sizeof(b): %lu\n", sizeof(b));
+   printf("sizeof(&b): %lu\n", sizeof(&b));
+   return (0);
+}
+ubuntu@ip-172-31-63-244:~/julien/curriculum_by_julien/low_level_programming/pointers$ gcc 19-main.c && ./a.out
+b: 0x7ffe0b9c62f0
+&b: 0x7ffe0b9c62f0
+sizeof(b): 98
+sizeof(&b): 8
+
