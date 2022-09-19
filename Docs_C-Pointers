@@ -32,3 +32,6 @@ Value of 'n': 98
 Address of 'n': 0x7ffd9c1969a4
 Value of 'p': 0x7ffd9c1969a4
 Value of 'n': 402
+
+at declaration, it is used to declare a variable of type pointer to something. Example: int *n;
+when used inside the code it is used to dereference pointers. Example *n = 98;
