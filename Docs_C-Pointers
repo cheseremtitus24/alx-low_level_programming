@@ -149,3 +149,6 @@ b: 0x7ffe0b9c62f0
 sizeof(b): 98
 sizeof(&b): 8
 
+### Array Pointer Arithmetic
+a[0] == *a
+a[1] == *(a+1)
