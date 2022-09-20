@@ -14,9 +14,9 @@
 void print_array(int *a, int n)
 {
 	int i;
-	int len = sizeof(a)/sizeof(int);
 
-	if (n < 0 || len > n)
+	/* It is not possible to know the size of an array from a pointer variable */
+	if (n < 0)
 	{
 		exit(0);
 	}
