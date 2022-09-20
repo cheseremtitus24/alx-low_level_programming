@@ -14,8 +14,9 @@
 void print_array(int *a, int n)
 {
 	int i;
+	int len = sizeof(a)/sizeof(int);
 
-	if (n < 0)
+	if (n < 0 || len > n)
 	{
 		exit(0);
 	}
