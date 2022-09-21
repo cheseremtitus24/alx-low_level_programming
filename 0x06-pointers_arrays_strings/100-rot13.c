@@ -1,15 +1,7 @@
 #include "main.h"
-#include <stdio.h>
-/**
- * Algorithm: C = E (p, k) mod 26 = (p + k) mod 26
- * Where: C - Cipher-Text E - Encryption Alg p - Plain-Text k - Shift-key-length
- * AND: mod 26 prevents us from accessing an array out of bounds index.
- * AND: mod also enables us to overlap and route back to the beginning of the
- * array.
- */
 
 /**
- * leet- Translates upper/lower cases to a number
+ * rot13- Displaces Alphabets by key value 13
  * @s: Input String
  *
  * Description- Translates [Aa][Ee][Oo][Tt] to 43107 respectively

@@ -11,17 +11,18 @@
  * int arr[5] = {1,2,3,4,5};
  * reverse_array(arr, 3) -> {3,2,1,4,5}
  *
- * Return: void 
+ * Return: void
  */
 
 void reverse_array(int *a, int n)
 {
-	int i,j,tmp;
+	int i, j, tmp;
 
-	if ( n <= 0)
+	if (n <= 0)
 	{
 		exit(EXIT_SUCCESS);
 	}
+
 	j = n - 1;
 
 	for (i = 0; i < j; i++)
