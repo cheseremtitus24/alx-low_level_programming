@@ -5,7 +5,7 @@
  *
  * Description- Finds the lenght of input string and return it
  *
- * Return: returns
+ * Return: void
  */
 int _strlen(char *s)
 {

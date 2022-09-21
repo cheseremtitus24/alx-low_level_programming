@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * string_toupper- Translates Lowercase to Upper
+ * string_toupper- Translates Lowercase to Uppercase
  * @s: Input String
  *
  * Description- Translates lowercase characters to equivalent Uppercase values.

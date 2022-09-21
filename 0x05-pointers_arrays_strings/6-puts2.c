@@ -18,6 +18,7 @@ void puts2(char *str)
 	}
 	else
 	{
+		/*1 place less for the '\0' string char*/
 		for (i = 0; i <= strlen(str) - 1; i++)
 		{
 			if (i == 0)
