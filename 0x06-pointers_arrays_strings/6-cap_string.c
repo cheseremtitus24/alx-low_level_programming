@@ -10,7 +10,6 @@
  */
 char *cap_string(char *s)
 {
-	int slen = strlen(s);
 	int i, j, k;
 	char *caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char *lower = "abcdefghijklmnopqrstuvwxyz";
