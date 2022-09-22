@@ -10,15 +10,15 @@
  */
 char *rot13(char *s)
 {
-	if ( (int)strlen(s) <=0 )
-	{
-		return;
-	}
 	int i, j;
 	char *pcode = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
 	char *ecodes = "NnOoPpQqRrSsTtUuVvWwXxYyZzAaBbCcDdEeFfGgHhIiJjKkLlMm";
 
 	/* iterate through entire input string */
+	if ( (int)strlen(s) <=0 )
+	{
+		return;
+	}
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
