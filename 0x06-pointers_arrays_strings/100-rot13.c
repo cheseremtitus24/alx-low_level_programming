@@ -10,7 +10,7 @@
  */
 char *rot13(char *s)
 {
-	if ( strlen(s) <=0 )
+	if ( (int)strlen(s) <=0 )
 	{
 		return;
 	}
