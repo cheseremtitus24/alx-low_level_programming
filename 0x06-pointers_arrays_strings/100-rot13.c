@@ -15,10 +15,6 @@ char *rot13(char *s)
 	char *ecodes = "NnOoPpQqRrSsTtUuVvWwXxYyZzAaBbCcDdEeFfGgHhIiJjKkLlMm";
 
 	/* iterate through entire input string */
-	if ( (int)strlen(s) < 0 )
-	{
-		return s;
-	}
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
