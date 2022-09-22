@@ -17,7 +17,7 @@ char *rot13(char *s)
 	/* iterate through entire input string */
 	if ( (int)strlen(s) <=0 )
 	{
-		return;
+		return s;
 	}
 
 	for (i = 0; s[i] != '\0'; i++)
