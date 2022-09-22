@@ -14,6 +14,8 @@ char *rot13(char *);
 void print_number(int n);
 int _putchar(char c);
 char *infinite_add(char *n1, char *n2, char *r, int size_r);
+void reverse_char_array(char *a, int n);
+void print_buffer(char *b, int size);
 /*
  * Structs, enums and unions definitions
  * Typedefs
