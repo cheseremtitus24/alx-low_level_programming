@@ -10,6 +10,10 @@
  */
 char *rot13(char *s)
 {
+	if ( strlen(s) <=0 )
+	{
+		return;
+	}
 	int i, j;
 	char *pcode = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz";
 	char *ecodes = "NnOoPpQqRrSsTtUuVvWwXxYyZzAaBbCcDdEeFfGgHhIiJjKkLlMm";
