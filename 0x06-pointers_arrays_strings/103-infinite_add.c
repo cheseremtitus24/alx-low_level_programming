@@ -17,7 +17,7 @@
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	/* perform addition then compare size_r to result of addition */
-	int i, j, s1len, s2len, temp1, temp2, tmpsum, carry;
+	int i, f, j, s1len, s2len, temp1, temp2, tmpsum, carry;
 	int buff_checker;
 
 	s1len = (int)strlen(n1);
@@ -107,6 +107,14 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	}
 	/*reverse the array */
+	for (f = 0; r[f] != '\0'; f++)
+	{
+		/*printf("%d ",r[f]);*/
+		if (r[f] > 57)
+		{
+			r[f] = '\0';
+		}
+	}	
 	reverse_char_array(r, buff_checker + 1);
 	return (r);
 
