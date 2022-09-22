@@ -22,7 +22,14 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	s1len = (int)strlen(n1);
 	s2len = (int)strlen(n2);
-	carry, buff_checker = 0;
+	carry = 0;
+       	buff_checker = 0;
+
+	if (s2len >= size_r || s1len >= size_r)
+	{
+		return (0);
+	}
+
 	/* try to get size of pointer to char */
 
 	/*printf("Size of char from pointer is %ld",strlen(n1));*/
@@ -30,47 +37,74 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	{
 		temp1 = (int)(n1[i] - '0');
 		temp2 = (int)(n2[j] - '0');
-		tmpsum = temp1 + temp2 + carry;
+		tmpsum = (int)(temp1 + temp2 + carry);
 		/* reset carry to 0 */
 		carry = 0;
 		if (tmpsum > 9)
 		{
-			carry = tmpsum / 10;
+			carry = 1;
 			tmpsum = tmpsum % 10;
 		}
 		/* increment buffer checker to ensure answer fits in target*/
-		if (buff_checker > size_r)
+		if (buff_checker > (size_r - 1))
 		{
 			/* result can't be stored in r thus return 0*/
 			return (0);
 		}
-		r[buff_checker] = tmpsum + '0';
+		r[buff_checker] = (int)(tmpsum + '0');
 		buff_checker++;
 	}
+
 	/* handle '1234' + '12'*/
 	for ( ; i >= 0; i--)
 	{
-		if (buff_checker > size_r)
+		if (buff_checker >= (size_r - 1))
 		{
 			/* result can't be stored in r thus return 0*/
 			return (0);
 		}
-		temp1 = (int)(n1[i] - '0') + carry;
+		temp1 = (int)((n1[i] - '0') + carry);
 		/* reset carry variable to 0*/
 		carry = 0;
-		r[buff_checker] = temp1 + '0';
+		if (temp1 > 9)
+		{
+			carry = 1;
+			temp1 = temp1 % 10;
+		}
+		r[buff_checker] = (int)(temp1 + '0');
+		buff_checker++;
 	}
+
 	for ( ; j >= 0; j--)
 	{
-		if (buff_checker > size_r)
+		if (buff_checker >= (size_r - 1))
 		{
 			/* result can't be stored in r thus return 0*/
 			return (0);
 		}
-		temp2 = (int)(n2[j] - '0') + carry;
+		temp2 = (int)((n2[j] - '0') + carry);
 		/* reset carry variable to 0*/
 		carry = 0;
-		r[buff_checker] = temp2 + '0';
+		if (temp2 > 9)
+		{
+			carry = 1;
+			temp2 = temp2 % 10;
+		}
+		r[buff_checker] = (int)(temp2 + '0');
+		buff_checker++;
+	}
+
+	if(carry > 0)
+	{
+
+		if (buff_checker >= (size_r - 1))
+		{
+			/* result can't be stored in r thus return 0*/
+			return (0);
+		}
+		r[buff_checker] = (int)(carry + '0');
+		carry = 0;
+
 	}
 	/*reverse the array */
 	reverse_char_array(r, buff_checker + 1);
