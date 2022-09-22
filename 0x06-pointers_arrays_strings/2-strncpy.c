@@ -17,9 +17,7 @@ char *_strncpy(char *dest, char *src, int n)
 	 * when source to copy is less than destination
 	 * padd the empty indexes with '\0'
 	 */
-	int i, dest_len;
-
-	dest_len = strlen(dest);
+	int i;
 
 	for (i = 0 ; i < n && src[i] != '\0'; i++)
 	{
