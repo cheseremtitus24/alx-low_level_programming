@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * string_toupper- Translates Lowercase to Uppercase
  * @s: Input String
@@ -11,7 +10,6 @@
 
 char *string_toupper(char *s)
 {
-	int slen = strlen(s);
 	int i, j;
 	char *caps = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char *lower = "abcdefghijklmnopqrstuvwxyz";
@@ -20,7 +18,7 @@ char *string_toupper(char *s)
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (j = 0; j < strlen(caps); j++)
+		for (j = 0; j < (int)strlen(caps); j++)
 		{
 			if (s[i] == lower[j])
 			{
