@@ -23,7 +23,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	s1len = (int)strlen(n1);
 	s2len = (int)strlen(n2);
 	carry = 0;
-       	buff_checker = 0;
+	buff_checker = 0;
 
 	if (s2len >= size_r || s1len >= size_r)
 	{
@@ -94,7 +94,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		buff_checker++;
 	}
 
-	if(carry > 0)
+	if (carry > 0)
 	{
 
 		if (buff_checker >= (size_r - 1))
@@ -114,7 +114,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		{
 			r[f] = '\0';
 		}
-	}	
+	}
 	reverse_char_array(r, buff_checker + 1);
 	return (r);
 
