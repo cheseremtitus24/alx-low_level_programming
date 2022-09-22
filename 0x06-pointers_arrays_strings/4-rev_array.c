@@ -20,7 +20,7 @@ void reverse_array(int *a, int n)
 
 	if (n <= 0)
 	{
-		exit(EXIT_SUCCESS);
+		return;
 	}
 
 	j = n - 1;
