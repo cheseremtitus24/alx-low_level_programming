@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-#include <string.h>
 /**
  * _print_rev_recursion- prints a string in reverse
  * @s: string to print
@@ -37,5 +35,5 @@ void reverse(char *str, int k)
 	reverse(str, k + 1);
 
 	/* print current character*/
-	printf("%c", str[k]);
+	_putchar(str[k]);
 }
