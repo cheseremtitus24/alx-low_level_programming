@@ -1,14 +1,11 @@
 #include "main.h"
 /**
- * _sqrt_recursion- computes the square root of a number
+ * is_prime_number- checks if a number is prime
  * @n: input number
  *
- * Description- Computes the square root of a number recursively using the
- * subtraction of odd numbers till subtraend is zero.
- * Method: Repeated Subtraction of Square Root
- * sourced from : https://cuemath.com/algebra/squares-and-square-roots
+ * Description- Checks that a number is prime and returns 1 else 0
  *
- * Return: positive integer else -1
+ * Return: positive integer else 0
  */
 int is_prime_number(int n)
 {
@@ -16,19 +13,25 @@ int is_prime_number(int n)
 		return (0);
 	if (n <= 0)
 		return (0);
-	return (!isPrime(2,n));
+	return (!isPrime(2, n));
 
 
 }
 
-int isPrime(int i,int num){
+/**
+ * isPrime- checks if a number is prime
+ * @i: seed number
+ * @num: input number
+ *
+ * Description- Checks recursively that a number is prime and returns 1 else 0
+ *
+ * Return: 1 else 0
+ */
+int isPrime(int i, int num)
+{
 	if (num == i)
 		return (0);
-	else
-		if(num % i == 0)
-			return (1);
-		else
-		{
-			return isPrime(i+1, num);
-		}
+	if (num % i == 0)
+		return (1);
+	return (isPrime(i + 1, num));
 }
