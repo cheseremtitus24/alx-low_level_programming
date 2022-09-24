@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 /**
  * _sqrt_recursion- computes the square root of a number
  * @n: input number
@@ -41,5 +42,6 @@ int _sqrt(int n, int x, int y)
 	if (n == 0)
 		return (y + 1);
 	y++;
-	_sqrt((n -= (x += 2)), x, y);
+	x += 2;
+	return (_sqrt((n -= x), x, y));
 }
