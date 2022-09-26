@@ -4,8 +4,8 @@
  * @s: string pointer pointer
  * @to: string to point to
  *
- * Description- prints chessboard
- * Return: string pointer
+ * Description- sets s pointer to point to address of to
+ * Return: void
  */
 
 void set_string(char **s, char *to)
