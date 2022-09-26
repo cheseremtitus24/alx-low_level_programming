@@ -11,10 +11,11 @@
 
 char *_strchr(char *s, char c)
 {
-	/*memcpy(dest, src, n);*/
-
 	unsigned int i;
 	char *ret;
+
+	if (strlen(s) <= 0)
+		return (s);
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
