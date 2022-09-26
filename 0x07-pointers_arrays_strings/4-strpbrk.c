@@ -1,3 +1,4 @@
+#include <stddef.h>
 /**
  * _strpbrk- Search for character in a string
  * @s: input string
