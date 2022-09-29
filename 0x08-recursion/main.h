@@ -13,7 +13,8 @@ int _sqrt(int n, int x, int y);
 int _sqrt_recursion(int n);
 int is_prime_number(int n);
 int isPrime(int i, int num);
-
+int is_palindrome(char *s);
+int checkPalindrome(char *str, int f, int b, int len);
 /*
  * Structs, enums and unions definitions
  * Typedefs
