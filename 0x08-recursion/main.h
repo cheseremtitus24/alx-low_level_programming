@@ -15,6 +15,7 @@ int is_prime_number(int n);
 int isPrime(int i, int num);
 int is_palindrome(char *s);
 int checkPalindrome(char *str, int f, int b, int len);
+int wildcmp(char *s1, char *s2);
 /*
  * Structs, enums and unions definitions
  * Typedefs
