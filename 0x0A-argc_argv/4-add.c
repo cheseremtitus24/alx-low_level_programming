@@ -27,14 +27,16 @@ int main(int argc, char **argv)
 	{
 		if (argc == 2)
 		{
-			print_number(_atoi(argv[1]));
-			_putchar('\n');
-			return (0);
+			if (_atoi(argv[1]) > 0)
+			{
+				print_number(_atoi(argv[1]));
+				_putchar('\n');
+				return (0);
+			}
 		}
 		_puts_recursion("Error");
 		return (1);
 	}
-
 	for (i = 1; i < argc; i++)
 	{
 		if (_atoi(argv[i]) > 0)
@@ -48,7 +50,6 @@ int main(int argc, char **argv)
 	}
 	print_number(result);
 	_putchar('\n');
-
 	return (0);
 }
 /**
