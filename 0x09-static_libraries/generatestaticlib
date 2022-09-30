@@ -1,0 +1,2 @@
+#!/bin/bash
+ar -rc lib$1.a *.o
