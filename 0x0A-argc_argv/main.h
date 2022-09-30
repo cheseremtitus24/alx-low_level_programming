@@ -5,6 +5,7 @@
 int _putchar(char c);
 void print_number(int);
 void _puts_recursion(char *s);
+int _atoi(char *s);
 
 /*
  * Structs, enums and unions definitions
