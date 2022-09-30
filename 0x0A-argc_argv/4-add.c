@@ -18,8 +18,12 @@ int main(int argc, char **argv)
 
 	result = 0;
 
-	if (argc < 2)
+	if (argc == 1)
+	{
+		_puts_recursion("0");
 		return (0);
+	}
+
 	if (argc < 3)
 	{
 		_puts_recursion("Error");
