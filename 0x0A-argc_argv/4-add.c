@@ -23,9 +23,14 @@ int main(int argc, char **argv)
 		_puts_recursion("0");
 		return (0);
 	}
-
 	if (argc < 3)
 	{
+		if (argc == 2)
+		{
+			print_number(_atoi(argv[1]));
+			_putchar('\n');
+			return (0);
+		}
 		_puts_recursion("Error");
 		return (1);
 	}
