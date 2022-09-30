@@ -4,13 +4,14 @@
  * @argc: number of commandline arguments
  * @argv: Vector array of commandline arguments
  *
- * Description- prints the executable's filename
+ * Description- prints the executable's passed in command
+ * line arguments
  *
  * Return: 0
  */
 int main(int argc, __attribute__((unused))  char **argv)
 {
-	print_number(argc);
+	print_number(argc - 1);
 	_putchar('\n');
 	return (0);
 }
