@@ -1,13 +1,14 @@
 #include "main.h"
 /**
- * _print_rev_recursion- prints a string in reverse
- * @s: string to print
+ * main- Takes in Commandline Arguments
+ * @argc: number of commandline arguments
+ * @argv: Vector array of commandline arguments
  *
- * Description- outputs a string in reverse using recursion
+ * Description- prints the executable's filename
  *
- * Return: void
+ * Return: 0
  */
-int main(int argc, char **argv)
+int main(__attribute__((unused)) int argc, char **argv)
 {
 	int i;
 	char *s = (*argv + 0);
