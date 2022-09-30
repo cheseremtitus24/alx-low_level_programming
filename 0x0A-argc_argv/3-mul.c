@@ -18,7 +18,7 @@ int main(int argc, char **argv)
 
 	result = 1;
 
-	if (argc < 2)
+	if (argc < 3 || argc > 3)
 	{
 		_puts_recursion("Error");
 		return (1);
