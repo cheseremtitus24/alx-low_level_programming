@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 
 	for (i = 1; i < argc; i++)
 	{
-		if (_atoi(argv[i]) >  0 )
+		if (_atoi(argv[i]) > 0)
 			result += _atoi(argv[i]);
 		else
 		{
