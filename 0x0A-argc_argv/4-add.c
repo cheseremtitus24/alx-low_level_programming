@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <stdint.h>
 /**
- * main- Takes in Commandline Arguments
+ * main- Takes in Commandline Arguments and prints their sum
  * @argc: number of commandline arguments
  * @argv: Vector array of commandline arguments
  *
@@ -18,17 +18,24 @@ int main(int argc, char **argv)
 
 	result = 0;
 
+	if (argc < 2)
+		return (0);
 	if (argc < 3)
 	{
 		_puts_recursion("Error");
 		return (1);
 	}
 
-
-
 	for (i = 1; i < argc; i++)
 	{
-		result += _atoi(argv[i]);
+		if (_atoi(argv[i]) >  0 )
+			result += _atoi(argv[i]);
+		else
+		{
+			_puts_recursion("Error");
+			return (1);
+		}
+
 	}
 	print_number(result);
 	_putchar('\n');
