@@ -4,6 +4,7 @@
 #include <string.h>
 int _putchar(char c);
 void print_number(int);
+void _puts_recursion(char *s);
 
 /*
  * Structs, enums and unions definitions

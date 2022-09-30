@@ -12,19 +12,39 @@
  */
 int _atoi(char *s)
 {
-	/*char *s = "   -()3 323 "; atoi fails*/
-	/**
-	 * Capture only the first signed integer
-	 * Retrieve an integer from char using
-	 * putchar('3' - '0')
-	 * int result = ('3' - '0');
-	 * result is 3.
-	 */
-	/**
-	 * putchar('3' - '0');
-	 * int result = ('3' - '0');
-	 * return (result);
-	 */
-	return (atoi(s));
+	int number, i;
+	int flag = 0;
+
+	number = 0;
+
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (s[i] == '-')
+		{
+			flag += 1;
+			continue;
+		}
+		else if (s[i] == '+' || s[i] == ' ')
+		{
+			/* checks "23 33" returns only 23*/
+			if (s[i - 1] > '0' && s[i - 1] < '9')
+				break;
+			continue;
+		}
+		else if ((s[i] <= 'z' && s[i] >= 'a') ||  (s[i] <= 'Z' && s[i] >= 'A'))
+		{
+			/* checks "23z33" returns only 23*/
+			if (s[i - 1] > '0' && s[i - 1] < '9')
+				break;
+			continue;
+		}
+
+		number = number * 10 + s[i] - '0';
+	}
+	if (flag % 2 == 0)
+		return (number);
+
+	return (number * -1);
 
 }
