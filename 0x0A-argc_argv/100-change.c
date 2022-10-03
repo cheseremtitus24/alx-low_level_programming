@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 	counter = 0;
 	i = 0;
 
-	while (i < (sizeof(denominations) / sizeof(int)))
+	while (i < (int)(sizeof(denominations) / sizeof(int)))
 	{
 		while (amount >= denominations[i])
 		{
