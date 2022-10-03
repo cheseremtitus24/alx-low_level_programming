@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 	}
 
 	/* Parse string input to Integer*/
-	amount = _atoi(argv[1]);
+	amount = atoi(argv[1]);
 	/*print_number(amount);*/
 
 	/* Check that passed in amount value is > 0*/
