@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * main - Prints the minimum number of coin denominations to give as change.
@@ -19,7 +20,7 @@ int main(int argc, char **argv)
 	/* Handle number of number of arguments being other than exactly 1*/
 	if (argc != 2)
 	{
-		_puts_recursion("Error");
+		printf("Error\n");
 		return (1);
 	}
 
@@ -30,7 +31,7 @@ int main(int argc, char **argv)
 	/* Check that passed in amount value is > 0*/
 	if (amount <= 0)
 	{
-		_puts_recursion("0");
+		printf("0\n");
 		return (0);
 	}
 
@@ -47,8 +48,9 @@ int main(int argc, char **argv)
 		}
 		i++;
 	}
-	print_number(counter);
-	_putchar('\n');
+	printf("%d\n",counter);
+	/*print_number(counter);*/
+	/*_putchar('\n');*/
 	return (0);
 }
 /**
