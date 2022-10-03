@@ -13,6 +13,8 @@
 char *create_array(unsigned int size, char c)
 {
 	int i;
+	if (size <=0)
+		return (NULL);
 	char *dynmemptr = (char *) malloc(sizeof(char) *  size);
 
 	if (dynmemptr == NULL)
