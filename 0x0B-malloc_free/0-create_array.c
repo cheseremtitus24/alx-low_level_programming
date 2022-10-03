@@ -1,24 +1,26 @@
 #include "main.h"
 /**
- * _puts_recursion- prints a string
- * @s: string to print
+ * create_array- returns a array pointer of specified size
+ * @size: array size to be allocated in heap memory
+ * @c: Character to initialize the created array with
  *
- * Description- outputs a string using recursive calls
- * to function _puts_recursion(s)
+ * Description- Dynamically allocates memory in heap and initializes
+ * the space with specified character.
  *
  * Return: void
  */
 
-void _puts_recursion(char *s)
+char *create_array(unsigned int size, char c)
 {
-	if (*s == '\0')
-	{
-		_putchar('\n');
-		return;
-	}
-	_putchar(*s);
-	s = s + 1;
-	_puts_recursion(s);
+	int i;
+	char *dynmemptr = (char *) malloc(sizeof(char) *  size);
+
+	if (dynmemptr == NULL)
+		return (NULL);
+
+	for (i = 0; i < (int)(sizeof(char) * size) ; i++)
+		dynmemptr[i] = c;
+
+	return (dynmemptr);
 
 }
-
