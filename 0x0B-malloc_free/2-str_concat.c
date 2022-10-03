@@ -24,7 +24,7 @@ char *str_concat(char *s1, char *s2)
 		dynmemptr[i] = *s1++;
 
 	for (i = 0; i < str2size ; i++)
-		dynmemptr[i] = *s2++;
+		dynmemptr[str1size + i] = *s2++;
 
 	dynmemptr[i + 1] = '\n';
 
