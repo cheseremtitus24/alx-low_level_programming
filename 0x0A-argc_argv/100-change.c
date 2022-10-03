@@ -49,8 +49,7 @@ int main(int argc, char **argv)
 	}
 	print_number(counter);
 	_putchar('\n');
-
-
+	return (0);
 }
 /**
  * _putchar - writes the character c to stdout
