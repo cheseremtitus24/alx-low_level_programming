@@ -15,24 +15,22 @@ int **alloc_grid(int width, int height)
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
-	dynmemptr = (int **) malloc((sizeof(int *) *  height));
+	dynmemptr = (int **) malloc((sizeof(int *) * height));
 	if (dynmemptr == NULL)
 		return (NULL);
+	h = 0;
 
 	while (h < height)
 	{
-		w = 0;
-		while (w < width)
+		dynmemptr[h] = (int *) malloc(sizeof(int) * width);
+		if (dynmemptr[h] == NULL)
 		{
-			dynmemptr[w] = (int *) malloc(sizeof(int) * width);
-			if (dynmemptr[w] == NULL)
+			free(dynmemptr);
+			for (; j <= h; j++)
 			{
-				free(dynmemptr);
-				for (; j <= w; j++)
-					free(dynmemptr[j]);
-				return (NULL);
+				free(dynmemptr[j]);
 			}
-			w++;
+			return (NULL);
 		}
 		h++;
 	}
