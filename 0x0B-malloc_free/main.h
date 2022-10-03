@@ -4,7 +4,10 @@
 #include <stdlib.h>
 int _putchar(char c);
 char *create_array(unsigned int size, char c);
-
+char *_strdup(char *str);
+unsigned int _sizeof(char *s);
+char *str_concat(char *s1, char *s2);
+int **alloc_grid(int width, int height);
 /*
  * Structs, enums and unions definitions
  * Typedefs
