@@ -15,7 +15,7 @@ char *_strdup(char *str)
 	int strsize = _sizeof(str);
 	char *dynmemptr = (char *) malloc((sizeof(char) * strsize) + 1);
 
-	if (dynmemptr == NULL)
+	if (dynmemptr == NULL || str == NULL)
 		return (NULL);
 
 	for (i = 0; i < (int)(sizeof(char) * strsize) ; i++)
