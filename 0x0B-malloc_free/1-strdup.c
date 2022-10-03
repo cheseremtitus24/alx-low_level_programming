@@ -13,9 +13,13 @@ char *_strdup(char *str)
 {
 	int i;
 	int strsize = _sizeof(str);
-	char *dynmemptr = (char *) malloc((sizeof(char) * strsize) + 1);
+	char *dynmemptr;
 
-	if (dynmemptr == NULL || str == NULL)
+	if (str == NULL)
+		return (NULL);
+	dynmemptr = (char *) malloc((sizeof(char) * strsize) + 1);
+
+	if (dynmemptr == NULL)
 		return (NULL);
 
 	for (i = 0; i < (int)(sizeof(char) * strsize) ; i++)
