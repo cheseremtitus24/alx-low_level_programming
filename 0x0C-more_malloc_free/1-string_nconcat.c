@@ -38,7 +38,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	dynmemptr[i] = '\0';
 
 	/* call _strncat function*/
-	if (n >= src_len)
+	if ((int) n >= src_len)
 	{
 		dynmemptr = _strncat(dynmemptr, s2, src_len+1);
 	}
