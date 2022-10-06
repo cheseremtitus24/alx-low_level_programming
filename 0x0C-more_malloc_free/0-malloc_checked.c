@@ -13,9 +13,9 @@ void *malloc_checked(unsigned int b)
 	void *dynmemptr;
 
 	if (b <= 0)
-		return (98);
+		exit(98);
 	dynmemptr = malloc(b);
 	if (dynmemptr == NULL)
-		return (98);
+		exit(98);
 	return (dynmemptr);
 }
