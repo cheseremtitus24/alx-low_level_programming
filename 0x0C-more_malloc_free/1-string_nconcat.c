@@ -51,11 +51,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	int i, dest_len;
+	int i, dest_len, src_len;
 
 	dest_len = _strlen_recursion(dest);
+	src_len = _strlen_recursion(src);
 
-	for (i = 0 ; i < n && src[i] != '\0'; i++)
+	for (i = 0 ; i < n && src[i] != '\0' && n <= src_len; i++)
 	{
 		dest[dest_len + i] = src[i];
 	}
