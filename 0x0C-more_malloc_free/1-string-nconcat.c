@@ -10,10 +10,16 @@
  * Return: char pointer
  */
 
-char *string_nconcat(char *s1, __attribute__((unused)) char *s2, __attribute__((unused)) unsigned int n)
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *dynmemptr;
 	int i, dest_len;
+
+	/* handle NULL Strings*/
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
 
 	dest_len = _strlen_recursion(s1);
 
