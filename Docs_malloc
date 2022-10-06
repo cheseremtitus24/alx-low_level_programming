@@ -1,0 +1,10 @@
+Reading strings from within c-binary files
+1. strings a.out
+2. objdump -sj .rodata a.out
+
+64 Bit Machines optimize char str[] 
+1. Anaylyze using : objdump -d -Mintel a.out
+
+Macellaneous: Proper casting
+int *sieve = malloc(sizeof *sieve * length);
+
