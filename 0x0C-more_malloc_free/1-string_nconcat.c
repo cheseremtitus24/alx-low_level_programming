@@ -22,10 +22,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 
 	dest_len = _strlen_recursion(s1);
-	src_len = _strlen_recursion(s2);
+	src_len = _strlen_recursion(s2) + 1;
 
 	/* create memory store in heap*/
-	dynmemptr = malloc(dest_len);
+	dynmemptr = malloc(dest_len + 1);
 	/* Check that memory allocation was a success*/
 	if (dynmemptr == NULL)
 		return (NULL);
@@ -62,7 +62,7 @@ char *_strncat(char *dest, char *src, int n)
 	int i, dest_len, src_len;
 
 	dest_len = _strlen_recursion(dest);
-	src_len = _strlen_recursion(src);
+	src_len = _strlen_recursion(src) + 1;
 
 	for (i = 0 ; i < n && src[i] != '\0' && n <= src_len; i++)
 	{
