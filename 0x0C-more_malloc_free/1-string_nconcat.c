@@ -40,7 +40,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	/* call _strncat function*/
 	if ((int) n >= src_len)
 	{
-		dynmemptr = _strncat(dynmemptr, s2, src_len+1);
+		dynmemptr = _strncat(dynmemptr, s2, src_len);
 	}
 	else
 		dynmemptr = _strncat(dynmemptr, s2, n);
