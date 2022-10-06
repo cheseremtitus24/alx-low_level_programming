@@ -13,7 +13,7 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *dynmemptr;
-	int i, dest_len, src_len;
+	int i, dest_len;
 
 	/* handle NULL Strings*/
 	if (s1 == NULL)
@@ -22,7 +22,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s2 = "";
 
 	dest_len = _strlen_recursion(s1);
-	src_len = _strlen_recursion(s2);
 
 	/* create memory store in heap*/
 	dynmemptr = malloc(dest_len + 1);
