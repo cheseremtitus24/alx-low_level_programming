@@ -30,7 +30,7 @@ int *array_range(int min, int max)
 		return (NULL);
 
 	/* initialize allocated memory with zeros*/
-	for (i = 0; i <= totalsize; i++)
+	for (i = 0; initializer <= max; i++)
 		dynmemptr[i] = initializer++;
 
 	return (dynmemptr);
