@@ -25,7 +25,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	src_len = _strlen_recursion(s2);
 
 	/* create memory store in heap*/
-	dynmemptr = malloc(dest_len + 1);
+	dynmemptr = malloc(dest_len);
 	/* Check that memory allocation was a success*/
 	if (dynmemptr == NULL)
 		return (NULL);
