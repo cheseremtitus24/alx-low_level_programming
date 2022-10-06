@@ -23,7 +23,7 @@ int *array_range(int min, int max)
 
 	/* create memory store in heap*/
 	totalsize = max - min;
-	dynmemptr = malloc(sizeof(dynmemptr) * (totalsize + 1));
+	dynmemptr = malloc(sizeof(int) * (totalsize + 1));
 
 	/* Check that memory allocation was a success*/
 	if (dynmemptr == NULL)
