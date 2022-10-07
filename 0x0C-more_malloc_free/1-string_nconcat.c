@@ -47,7 +47,7 @@ char *string_nconcat(char *dest, char *src, unsigned int n)
 	{
 		for (i = 0; i < (int)n && src[i] != '\0'; i++)
 		{
-			dynmemptr[dest_len - 1 + i] = src[i];
+			dynmemptr[dest_len + i] = src[i];
 		}
 		dynmemptr[dest_len + i] = '\0';
 	}
