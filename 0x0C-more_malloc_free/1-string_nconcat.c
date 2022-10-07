@@ -16,10 +16,10 @@ char *string_nconcat(char *dest, char *src, unsigned int n)
 	char *dynmemptr;
 
 	/* handle NULL Strings*/
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
+	if (dest == NULL)
+		dest = "";
+	if (src == NULL)
+		src = "";
 
 	dest_len = strlen(dest) + 1;
 	src_len = strlen(src) + 1;
