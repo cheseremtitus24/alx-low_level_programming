@@ -23,7 +23,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	/* get string lengths */
 	s1len = 1;
 	while(name[s1len] != '\0')
-		slen++;
+		s1len++;
 	s2len = 1;
 	while(owner[s2len] != '\0')
 		s2len++;
