@@ -16,12 +16,17 @@ char *name, float age, char *owner)
 {
 	struct dog source;
 
-	source.name = name;
-	source.age = age;
-	source.owner = owner;
+	if (ptr == NULL)
+		ptr = &source;
 
-	memcpy(ptr, &source, sizeof(source));
-	/*ptr = &source;*/
+	else
+	{
+		source.name = name;
+		source.age = age;
+		source.owner = owner;
+
+		memcpy(ptr, &source, sizeof(source));
+	}
 
 }
 
