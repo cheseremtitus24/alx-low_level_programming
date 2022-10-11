@@ -11,7 +11,7 @@
  *
  * Returns: void
  */
-void init_dog(struct dog __attribute__((unused)) *ptr,
+void init_dog(struct dog *ptr,
 char *name, float age, char *owner)
 {
 	struct dog source;
@@ -20,8 +20,8 @@ char *name, float age, char *owner)
 	source.age = age;
 	source.owner = owner;
 
-	/*memcpy(ptr, &source, sizeof(source));*/
-	ptr = &source;
+	memcpy(ptr, &source, sizeof(source));
+	/*ptr = &source;*/
 
 }
 
