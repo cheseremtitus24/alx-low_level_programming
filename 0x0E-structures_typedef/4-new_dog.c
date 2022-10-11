@@ -12,6 +12,7 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
+	int s1len, s2len;
 
 	dog_t *dynamicmemptr = malloc(sizeof(dog_t));
 
@@ -19,10 +20,17 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (dynamicmemptr == NULL)
 		return (NULL);
 
-	/* assigning struct members values*/
+	/* get string lengths */
+	s1len = 1;
+	while(name[s1len] != '\0')
+		slen++;
+	s2len = 1;
+	while(owner[s2len] != '\0')
+		s2len++;
+
 	/* Keeping a copy of name and owner*/
-	dynamicmemptr->name = malloc(sizeof(name));
-	dynamicmemptr->owner = malloc(sizeof(owner));
+	dynamicmemptr->name = malloc(sizeof(char) * s1len);
+	dynamicmemptr->owner = malloc(sizeof(char) * s2len);
 	/* copy original string to the allocated space */
 	_strcpy(dynamicmemptr->name, name);
 	_strcpy(dynamicmemptr->owner, owner);
