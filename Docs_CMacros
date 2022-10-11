@@ -1,0 +1,66 @@
+self-Referential
+
+#define x (4 + y)
+#define y (2 * x)
+
+Expands to 
+x = 4 + y
+  = 4 + (2 * x)
+
+y = (2 * x)
+  = 2 * (4 + y) 
+
+#define VAL 22
+#define BUFFER VAL
+#define VAL 16
+
+Value of BUFFER will be 16 and not 22
+
+############## Macro's Taking Arguments ######
+
+#define MIN(X, Y) ((x) < (y) ? (x) : (y))
+
+usage in main
+int a = 3;
+int b = 53;
+int x = MIN(a, b); /* x = 3*/
+
+
+########## Include Guards # to Identify Terminate Blocks
+
+#ifndef _FILE_NAME_H_
+#define _FILE_NAME_H_
+/* code */
+
+#endif //#ifndef _FILE_NAME_H_ 
+
+Sample MACRO's
+#######
+
+#define INCREMENT(x) x++ //increments a passed in value
+
+// Error 1
+#define MULT(x,y) x * y
+
+int z = MULT(3 + 2, 4 + 2); evals to 13 instead of 30 bcoz
+//expands to 3 + 2 * 4 + 2 in the macro defn above
+
+//Correction 1
+#define MULT(x,y) (x) * (y)
+int z = MULT(3 + 2, 4 + 2); evals to 30 
+
+// Error 2
+#define ADD_FIVE(x) (x) + 5
+int x = ADD_FIVE(2+1) * 3; evals to ((2+1) + 5 * 3) = 18 instead of 24
+
+//Correction 2
+
+#define ADD_FIVE(x) ((x) + 5)
+int x = ADD_FIVE(2+1) * 3; evals to (((2+1) + 5) * 3) = 24
+
+Error 3
+#define MAX(a,b) ((a) < (b) ? (b) : (a))
+int x = 5;
+int y = 10;
+int z = MAX( x++ < y++ ? y++ : x++);
+/* y will have a value of 12 as it will be evaluated twice */
