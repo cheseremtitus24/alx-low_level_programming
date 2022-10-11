@@ -1,4 +1,7 @@
 Pointers to structures
+## Structure Reordering to Optimize memory usage
+http://www.catb.org/esr/structure-packing/
+
 
 to access a pointer to a structure, you have to dereference the pointer
 and then access its data using the '.' symbol.

@@ -1,0 +1,101 @@
+### We can use typedef to simplify the usage of function pointers.
+#Typedef's allow us to introduce synonyms for types which could have been declared
+#some other way.
+
+typedef int aaa, bbb, ccc;
+typedef int ar[15], arr[9][6];
+typedef char c, *cp, carr[100];
+
+/* now declare some objects */
+
+/* all ints */
+aaa     int1;
+bbb     int2;
+ccc     int3;
+
+ar      yyy;    /* array of 15 ints */
+arr     xxx;    /* 9*6 array of int */
+
+c       ch;     /* a char */
+cp      pnt;    /* pointer to char */
+carr    chry;   /* array of 100 char */
+
+### NOTE: Typedef's can never be used in function prototypes
+int f(int, int, int, int); /* prototype */
+typedef int a, b, c, d;
+int f(a,b,c,d); /* not a prototype */
+# Sample function that prints content on-screen
+
+#include <stdio.h>
+
+/**
+ * print_to_n: ouputs integers from 0 to n
+ * @n: count to n
+ * 
+ * Description: prints from 0-n n is included.
+ * 
+ * Returns: void
+ */
+
+void print_to_n(int n)
+{
+	int i;
+
+	for (i = 0; i <= n; ++i)
+	{
+		printf("%d\n", i);
+	}
+}
+
+#### We can use **typedef** to create a named function pointer type called **printer**
+
+typedef void (*printer_t)(int);
+
+#-> This creates a type, named ***printer_t*** for a pointer to a function that takes a single ***int*** argument and returns nothing - this matches the signature of the function above (void print_to_n(int n););
+
+We use these as follows:
+
+ typedef void (*printer_t)(int);
+ printer_t p = &print_to_n;
+ /* This would be the case were we not using typedef*/
+ void (*p)(int) = &print_to_n;
+
+ /* Calling the function pointed to by the function pointer  */
+ p(5); /* outputs 0 1 2 3 4 5
+ (*p)(5);/*this would have done the same in default case of not using typedef*/
+
+# typedef allows a simpler syntax when it comes to passing function pointers as arguments to functions.
+
+Example::
+
+void foo (void (*printer)(int), int y)
+{
+	/*code*/
+	(*printer)(y);
+	/*code*/
+}
+
+ void (*p)(int) = &print_to_n;
+foo(p, 5);
+
+# HOWEVER using typedef we would have something like 
+
+typedef void (*printer_r)(int);
+
+void foo (printer_r printer, int y)
+{
+	/*code*/
+	printer(y);
+	/*code*/
+}
+ printer_t p = &print_to_n;
+foo(printer, 5);
+	
+
+*****************************************************************************
+The use of typedef is also valuable when you want to declare things whose declaration syntax is painfully impenetrable, like ‘array of ten pointers to array of five integers’, which tends to cause panic even amongst the hardy. Hiding it in a typedef means you only have to read it once and can also help to break it up into manageable pieces:
+
+typedef int (*a10ptoa5i[10])[5];
+/* or */
+typedef int a5i[5];
+typedef a5i *atenptoa5i[10];
