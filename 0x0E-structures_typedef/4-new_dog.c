@@ -20,11 +20,46 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 
 	/* assigning struct members values*/
-	dynamicmemptr->name = name;
+	/* Keeping a copy of name and owner*/
+	dynamicmemptr->name = malloc(sizeof(name));
+	dynamicmemptr->name = malloc(sizeof(owner));
+	/* copy original string to the allocated space */
+	_strcpy(dynamicmemptr->name, name);
+	_strcpy(dynamicmemptr->owner, owner);
+
 	dynamicmemptr->age = age;
-	dynamicmemptr->owner = owner;
 
 	return (dynamicmemptr);
+
+}
+
+/**
+ * _strcpy- replicates the contents of an input string
+ * @dest: destination string
+ * @src: source string
+ *
+ * Description-Copies contents from source string to dst string
+ * and returns pointer to the first element of the dest string
+ *
+ * Return: character pointer
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int len, i;
+
+	len = 0;
+	while (src[len] != '\0')
+	{
+		len++;
+	}
+
+	for (i = 0; i < len; i++)
+	{
+		dest[i] = src[i];
+	}
+	dest[i] = '\0';
+
+	return (dest);
 
 }
 
