@@ -1,0 +1,31 @@
+Pointers to structures
+
+to access a pointer to a structure, you have to dereference the pointer
+and then access its data using the '.' symbol.
+
+BUT
+There is a simple way to do that, just by
+using the ‘->’ symbol.
+This symbol is equivalent to dereferencing
++ using '.'
+
+#include <stdio.h>
+struct User
+{
+  char *name, *email;
+  int age;
+ }
+  int main(void)
+  {
+    struct User user;
+    struct User *ptr;
+    
+    ptr = &user;
+    /* Dereferencing the pointer before accessing the data with the '.' symbol */
+    (*ptr).name = "foo";
+    
+    /* Using the '->' works the same, and is much easier */
+    ptr->email = "foo@email.com";
+    
+    return(0);
+   }
