@@ -22,7 +22,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	/* assigning struct members values*/
 	/* Keeping a copy of name and owner*/
 	dynamicmemptr->name = malloc(sizeof(name));
-	dynamicmemptr->name = malloc(sizeof(owner));
+	dynamicmemptr->owner = malloc(sizeof(owner));
 	/* copy original string to the allocated space */
 	_strcpy(dynamicmemptr->name, name);
 	_strcpy(dynamicmemptr->owner, owner);
