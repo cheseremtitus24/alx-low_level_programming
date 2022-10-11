@@ -3,6 +3,19 @@ Pointers to structures
 to access a pointer to a structure, you have to dereference the pointer
 and then access its data using the '.' symbol.
 
+## initializing structs using c89 styling
+
+/* /declare the struct with integer members*/
+struct point
+{
+  int x;
+  int y;
+ };
+ struct point p = { 1, 2}
+ or
+ struct point p = { .y = 2, .x = 1};
+ 
+
 BUT
 There is a simple way to do that, just by
 using the ‘->’ symbol.
