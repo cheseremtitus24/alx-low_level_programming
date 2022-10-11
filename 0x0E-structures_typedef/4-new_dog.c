@@ -20,7 +20,17 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	/* Keeping a copy of name and owner*/
 	dynamicmemptr->name = malloc(sizeof(name));
+	/* check if allocation was successful*/
+	if (dynamicmemptr->name == NULL)
+		free(dynamicmemptr->name);
 	dynamicmemptr->owner = malloc(sizeof(owner));
+	if (dynamicmemptr->owner == NULL)
+	{
+		free(dynamicmemptr->owner);
+		free(dynamicmemptr->name);
+		return (NULL);
+	}
+
 	/* copy original string to the allocated space */
 	_strcpy(dynamicmemptr->name, name);
 	_strcpy(dynamicmemptr->owner, owner);
