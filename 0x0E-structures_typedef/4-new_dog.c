@@ -22,12 +22,18 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dynamicmemptr->name = malloc(sizeof(name));
 	/* check if allocation was successful*/
 	if (dynamicmemptr->name == NULL)
+	{
 		free(dynamicmemptr->name);
+		free(dynamicmemptr);
+		return (NULL);
+	}
+
 	dynamicmemptr->owner = malloc(sizeof(owner));
 	if (dynamicmemptr->owner == NULL)
 	{
 		free(dynamicmemptr->owner);
 		free(dynamicmemptr->name);
+		free(dynamicmemptr);
 		return (NULL);
 	}
 
