@@ -29,4 +29,6 @@ struct dog
 void init_dog(struct dog *ptr, char *pname, float page, char *powner);
 void print_dog(struct dog *d);
 
+typedef struct dog dog_t;
+
 #endif /* _MAIN_H_ */
