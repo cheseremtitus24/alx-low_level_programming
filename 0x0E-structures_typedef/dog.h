@@ -26,6 +26,6 @@ struct dog
 };
 
 
-
+void init_dog(struct dog *ptr, char *pname, float page, char *powner);
 
 #endif /* _MAIN_H_ */
