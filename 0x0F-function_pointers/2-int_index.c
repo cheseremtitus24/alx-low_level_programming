@@ -15,6 +15,9 @@ int int_index(int *array, int size, int (*cmp)(int))
 	int i;
 	int result_index = -1;
 
+	if (!array || !cmp)
+		return;
+
 	/* invoke function on each and every element in array until condition is met*/
 
 	for (i = 0; i < size; i++)
