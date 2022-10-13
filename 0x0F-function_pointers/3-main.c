@@ -11,7 +11,7 @@
  */
 int main(int argc, char **argv)
 {
-	int i, result, (*op)(int, int);
+	int result, (*op)(int, int);
 
 	result = 0;
 	/* Checks passed in arguments */
