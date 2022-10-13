@@ -1,5 +1,6 @@
 #include "3-calc.h"
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * main- Takes in Commandline Arguments and prints their sum
  * @argc: number of commandline arguments
@@ -14,6 +15,7 @@ int main(int argc, char **argv)
 	int result, (*op)(int, int);
 
 	result = 0;
+
 	if (argc == 4)
 	{
 		/* Operator check */
