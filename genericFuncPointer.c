@@ -42,7 +42,7 @@ int main(void)
 	 * (&) address operator
 	 */
 	void (*fun_ptr_No_address_operator)(int) = fun;
-	fun_ptr(20);
+	fun_ptr_No_address_operator(20);
 
 	return (0);
 }
