@@ -1,5 +1,4 @@
 #include "variadic_functions.h"
-#include <stdarg.h> /* added for ease of later reference*/
 /**
  * sum_them_all- sums all passed in function parameters
  * @n: Number of successive parameters to expect
