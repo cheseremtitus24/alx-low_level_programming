@@ -11,8 +11,8 @@
 int sum_them_all(const unsigned int n, ...)
 {
 	/* initialize a variable ap of type var_list*/
-	unsigned int i;
-	unsigned int sum;
+	int i;
+	int sum;
 	va_list ap;
 
 	if (n == 0)
@@ -20,11 +20,10 @@ int sum_them_all(const unsigned int n, ...)
 
 	va_start(ap, n);
 
-	i = 0;
 	sum = 0;
 
 	/* iterate through arguments list through the generator func va_arg*/
-	for (; i < n; i++)
+	for (i = 0; i < (int) n; i++)
 		sum += va_arg(ap, int);
 
 	va_end(ap);
