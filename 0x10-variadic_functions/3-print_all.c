@@ -54,6 +54,7 @@ void print_all(const char *format, ...)
 				 */
 				f = (float) va_arg(ap, double);
 				printf("%s%f", sep, f);
+				break;
 
 			case 'c':
 		  		/**
