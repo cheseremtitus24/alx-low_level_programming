@@ -11,13 +11,11 @@
 int sum_them_all(const unsigned int n, ...)
 {
 	/* initialize a variable ap of type var_list*/
-	int i;
-	int sum;
+	int i, sum;
 	va_list ap;
 
 	if (n == 0)
 	{
-		_putchar('\n');
 		return (0);
 	}
 
@@ -32,15 +30,4 @@ int sum_them_all(const unsigned int n, ...)
 	va_end(ap);
 	return (sum);
 
-}
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
 }
