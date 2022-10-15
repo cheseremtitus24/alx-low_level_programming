@@ -25,7 +25,7 @@ void print_all(const char *format, ...)
 	count = 0;
 	
 
-	va_start(ap, format);
+	format != NULL ? va_start(ap, format) : exit(0);
 
 	while (*format)
 	{
