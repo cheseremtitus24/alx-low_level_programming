@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-
 /**
  * print_all- prints formatted variable types
  * @format: idata type format specifier
@@ -13,10 +12,9 @@
 void print_all(const char *format, ...)
 {
 	va_list ap;
-	char c;
 	float f;
 	int d, count;
-	char *sp, *s, *sep;
+	char *sp, *s, *sep, c;
 
 	sep = ", ";
 	count = 0;
@@ -32,7 +30,6 @@ void print_all(const char *format, ...)
 		{
 			case 's':              /* string */
 				sp = va_arg(ap, char *);
-				/*checks and handles NULL srings*/
 				s = sp ? sp : "(nil)";
 				printf("%s%s", sep, s);
 				break;
@@ -41,18 +38,10 @@ void print_all(const char *format, ...)
 				printf("%s%d", sep, d);
 				break;
 			case 'f':
-				/**
-				* float  needs a cast here since va_arg only
-				* takes fully promoted types
-				*/
 				f = (float) va_arg(ap, double);
 				printf("%s%f", sep, f);
 				break;
 			case 'c':
-				/**
-				* char needs a cast here since va_arg only
-				* takes fully promoted types
-				*/
 				c = (char) va_arg(ap, int);
 				printf("%s%c", sep, c);
 				break;
