@@ -24,10 +24,6 @@ void print_all(const char *format, ...)
 	sep = ", ";
 	count = 0;
 	
-	if (format == NULL)
-	{
-		exit(0);
-	}
 
 	va_start(ap, format);
 
@@ -74,7 +70,8 @@ void print_all(const char *format, ...)
 				break;
 		}
 	}
-	printf("\n");
 
 	va_end(ap);
+	printf("\n");
+	exit(0);
 }
