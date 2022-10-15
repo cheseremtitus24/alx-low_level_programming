@@ -1,5 +1,4 @@
 #include "variadic_functions.h"
-#include <unistd.h>
 /**
  * sum_them_all- sums all passed in function parameters
  * @n: Number of successive parameters to expect
@@ -14,7 +13,7 @@ int sum_them_all(const unsigned int n, ...)
 	int i, sum;
 	va_list ap;
 
-	if (n == 0)
+	if (n <= 0)
 	{
 		return (0);
 	}
