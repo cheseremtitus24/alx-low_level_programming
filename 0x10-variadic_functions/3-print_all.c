@@ -24,6 +24,12 @@ void print_all(const char *format, ...)
 	sep = ", ";
 	count = 0;
 
+	if (format == NULL)
+	{
+		printf("\n");
+		exit(0);
+	}
+
 	va_start(ap, format);
 
 	while (*format)
