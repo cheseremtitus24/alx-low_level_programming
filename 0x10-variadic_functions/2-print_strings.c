@@ -21,7 +21,10 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	va_list ap;
 
 	if (n == 0)
+	{
+		printf("\n");
 		exit(0);
+	}
 
 	va_start(ap, n);
 
