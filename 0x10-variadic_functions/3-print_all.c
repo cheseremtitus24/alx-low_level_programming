@@ -46,7 +46,8 @@ void print_all(const char *format, ...)
 				printf("%s%c", sep, c);
 				break;
 			default:
-				break;
+				continue;
+				/*break;*/
 		}
 	}
 	va_end(ap);
