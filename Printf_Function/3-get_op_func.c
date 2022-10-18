@@ -1,4 +1,4 @@
-#include "3-calc.h"
+#include "main.h"
 #include <string.h>
 
 /**

@@ -9,8 +9,8 @@
 /*Basic Helper Functions */
 int _putchar(char c);
 int _strlen_recursion(char *s);
-char *_strchr(char *s, unsigned int *scan_index, char c, unsigned int *counted);
-char *scan_symbol_strchr(char *s, unsigned int *scan_index, char c, unsigned int *counted);
+int _strchr(char *s, int *scan_index, char c, int *counted);
+char *scan_symbol_strchr(char *s, int *scan_index, char c, int *counted);
 char *_strstr(char *haystack, char *needle);
 void print_number(int n);
 void _puts_recursion(char *s);

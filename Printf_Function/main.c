@@ -9,6 +9,28 @@
  */
 int main(void)
 {
+    _printf("There is nothing to hold you down\n %");
+    //_printf("There is %d nothing to hold you down\n", 22);
+
+    //_printf("\\We are the ones %s two %s \\wiki", "Hello", "World");
+
+    /*char *f;
+    unsigned int curr_str_index = 0;
+
+    f = _strchr(s, '%', &curr_str_index );
+
+    if (f != NULL)
+    {
+        printf("%s\n current position: %d", f, curr_str_index);
+        // call  format specifier with args of current str index and first arg index of e.g replace number/string
+        foo(f,curr_str_index, va_arg(ap, char *);
+        //function parses and prints the format and returns the proper position of string index after reading and outputting.
+    }
+     */
+
+
+
+    /*
     int len;
     int len2;
     unsigned int ui;
@@ -40,5 +62,6 @@ int main(void)
     printf("Len:[%d]\n", len2);
     _printf("Unknown:[%r]\n");
     printf("Unknown:[%r]\n");
+     */
     return (0);
 }
