@@ -16,6 +16,7 @@ int op_sub(int a, int b);
 int op_mul(int a, int b);
 int op_div(int a, int b);
 int op_mod(int a, int b);
+
 /*
  * Structs, enums and unions definitions
  * Typedefs
@@ -28,10 +29,16 @@ int op_mod(int a, int b);
  * @op: The operator
  * @f: The function associated
  */
+
 typedef struct op
 {
 	char *op;
-int (*f)(int a, int b);
+	int (*f)(int a, int b);
 } op_t;
 
+typedef struct fs
+{
+	char *fs;
+	void (*f)(int a);
+} format_parser;
 #endif /* _MAIN_H_ */
