@@ -39,7 +39,7 @@ int _strchr(char *s, int *scan_index, char c, int *counted)
         *scan_index = *counted;
         return (-1);
     }
-    *counted = i;
+	*counted = i;
 	return((i - *scan_index));
 
 }

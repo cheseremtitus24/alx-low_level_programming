@@ -9,10 +9,11 @@
  */
 int main(void)
 {
-    _printf("There is nothing to hold you down\n %");
-    //_printf("There is %d nothing to hold you down\n", 22);
+   /* _printf("There is nothing to hold you down\n %");*/
+    _printf("%s There is nothing to hold you down\n", "Hello");
+    /*_printf("There is %d nothing to hold you down\n", 22);*/
 
-    //_printf("\\We are the ones %s two %s \\wiki", "Hello", "World");
+    /*_printf("\\We are the ones %s two %s \\wiki", "Hello", "World");*/
 
     /*char *f;
     unsigned int curr_str_index = 0;

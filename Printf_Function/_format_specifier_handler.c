@@ -1,6 +1,3 @@
-//
-// Created by lab on 18/10/2022.
-//
 /**
  * _strcmp- Compares 2 strings for equality
  * @s1: string to compare against

@@ -23,6 +23,7 @@ void switch_on(short int *scan_flag);
 
 /* Main Functions Level 1*/
 void _printf(char *fmt, ...);   /* '...' is C syntax for a variadic function */
+char *_identify_datatype(char *fmt, int pos_percent_sign, char *datatype, int *end_replace_index); 
 
 /* END OF Main Functions Level 1*/
 

@@ -8,7 +8,7 @@ int main(void)
 	char *s = "Hello";
 	int b = 4;
 	printf("Who are %s in the %d\n",s, b);
-	foo("Who are %s in the d",s, b);
+	foo("Who are s in the d",s, b);
 
 	return (0);
 }
@@ -30,6 +30,7 @@ void foo(char *fmt, ...)   /* '...' is C syntax for a variadic function */
 
 	while (*fmt)
 	{
+		printf("%c", *fmt);
 		switch (*fmt++) 
 		{
 			case 's':              /* string */
@@ -47,7 +48,6 @@ void foo(char *fmt, ...)   /* '...' is C syntax for a variadic function */
 				printf("%c", c);
 				break;
 			default:
-				/*printf("%c", *fmt);*/
 			
 
 		}
