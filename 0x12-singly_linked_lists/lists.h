@@ -3,13 +3,13 @@
 #define _MAIN_H_
 #include <stdlib.h>
 #include <stdarg.h>
-#include <stdio.h>
 
 int _putchar(char c);
 void _puts_recursion(char *s);
 void _print_number(int n);
 char *_strdup(const char *str, int *ptr);
 unsigned int _sizeof(const char *s);
+void __attribute__((constructor))before_main(void);
 
 /*
  * Structs, enums and unions definitions
