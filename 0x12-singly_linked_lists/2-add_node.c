@@ -2,7 +2,8 @@
 #include "lists.h"
 /**
  * add_node- adds nodes to beginning of linked list
- * @h: a pointer to a linked list head
+ * @head: a pointer to a linked list head
+ * @str: initializer node element string
  * Description: Attaches nodes to the beginning of Linked list
  * and initializes the len of list to the length of the string
  *
@@ -24,7 +25,8 @@ list_t *add_node(list_t **head, const char *str)
 
 	/* else assign values to the a new node */
 	new = malloc(sizeof(list_t));
-	/* check to ensure that malloc allocation of memory is
+	/**
+	 * check to ensure that malloc allocation of memory is
 	 * successful
 	 */
 	if (!new)
@@ -41,6 +43,7 @@ list_t *add_node(list_t **head, const char *str)
 /**
  * _strdup- duplicates a string
  * @str: String to be duplicated
+ * @ptr: Integer pointer variable to update string length
  *
  * Description- Dynamically allocates memory in heap and saves and returns a
  * copy of the input string str
