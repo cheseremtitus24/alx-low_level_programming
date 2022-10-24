@@ -21,10 +21,7 @@ list_t *add_node(list_t **head, const char *str)
 
 	/* if temp is null means it failed to allocate heap memory*/
 	if (!temp)
-	{
-		*head->len = slen;
 		return (NULL);
-	}
 
 	/* else assign values to the a new node */
 	new = malloc(sizeof(list_t));
