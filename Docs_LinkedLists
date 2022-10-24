@@ -122,3 +122,13 @@ anything yet */
 
 	return 0;
 }
+
+
+Time Complexity:
+
+Time Complexity	Worst Case	Average Case
+Search			O(n)	O(n)
+Insert			O(1)	O(1)
+Deletion		O(1)	O(1)
+
+Auxiliary Space: O(N)
