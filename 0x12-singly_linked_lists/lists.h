@@ -8,6 +8,9 @@
 int _putchar(char c);
 void _puts_recursion(char *s);
 void _print_number(int n);
+char *_strdup(const char *str, int *ptr);
+unsigned int _sizeof(const char *s);
+
 /*
  * Structs, enums and unions definitions
  * Typedefs
@@ -30,4 +33,5 @@ typedef struct list_s
 
 size_t print_list(const list_t *h);
 size_t list_len(const list_t *h);
+list_t *add_node(list_t **head, const char *str);
 #endif /* _MAIN_H_ */
