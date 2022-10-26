@@ -5,3 +5,4 @@ Singly Linked List
 3-add_nodeint_end.c - Adds nodes to the end of a Singly Linked list
 4-free_listint.c - Frees the dynamically allocated nodes in heap memory
 5-free_listint2.c - Frees dynamically allocated nodes and sets the head pointer to NULL.
+6-main.c - Pops the head of a node while returning the stored element value being removed
