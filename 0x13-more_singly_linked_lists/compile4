@@ -1,0 +1,1 @@
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 4-main.c 4-free_listint.c 3-add_nodeint_end.c 0-print_listint.c -o e  && valgrind ./e
