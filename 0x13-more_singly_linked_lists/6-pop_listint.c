@@ -25,6 +25,7 @@ int pop_listint(listint_t **head)
 	/*_putchar('\n');*/
 
 	new = ((*head)->next);
+	(*head)->next = NULL;
 	free(*head);
 	*head = new;
 
