@@ -18,10 +18,11 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 	/* Initialize counter to zero */
 	counter = 0;
-	
 	if (idx == 0)
 		return (NULL);
 
+	if( !*head || !head)
+		return (NULL);
 
 	lptr = (*head);
 	while (lptr != NULL && counter <= idx)/*handle if list is not empty*/
