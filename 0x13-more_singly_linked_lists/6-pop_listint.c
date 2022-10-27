@@ -13,19 +13,30 @@ int pop_listint(listint_t **head)
 	int sum;
 	listint_t *temp;
 
-	if (*head == NULL)
+	if (*head == NULL || !head)
 		return (0);
 
 
 	/* save the value of head node to variable*/
 	sum = (*head)->n;
-	temp = (*head)->next;
-	/*set *head next pointer to null*/
-	(*head)->next = NULL;
-	/*free the head*/
-	free(*head);
-	/*set temp as the new head*/
-	*head = temp;
+	if ((*head)->next == NULL)
+	{
+		free(*head);
+		*head = NULL;
+
+	}
+	else
+	{
+		temp = (*head)->next;
+		/*set *head next pointer to null*/
+		(*head)->next = NULL;
+		/*free the head*/
+		free(*head);
+		/*set temp as the new head*/
+		*head = temp;
+
+	}
+
 
 	return (sum);
 
