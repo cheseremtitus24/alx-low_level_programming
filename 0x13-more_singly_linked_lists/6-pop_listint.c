@@ -9,25 +9,23 @@
  */
 int pop_listint(listint_t **head)
 {
-	listint_t *new;
-	int num;
+	/* handle underflow */
+	int sum;
+	listint_t *temp;
 
-	num = 0;
-
-	if (head == NULL || *head == NULL)
-	{
+	if (*head == NULL)
 		return (0);
-	}
+
+	temp = malloc(sizeof(listint_t));
 
 
-	num = (*head)->n;
-	/*_print_number(*head->n);*/
-	/*_putchar('\n');*/
-
-	new = ((*head)->next);
+	/* save the current header's result to sum variable*/
+	sum = (*head)->n;
+	temp = (*head)->next;
 	(*head)->next = NULL;
 	free(*head);
-	*head = new;
+	*head = temp;
+	return (sum);
 
-	return (num);
+
 }
