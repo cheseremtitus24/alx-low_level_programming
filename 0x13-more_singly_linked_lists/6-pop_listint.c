@@ -16,15 +16,17 @@ int pop_listint(listint_t **head)
 	if (*head == NULL)
 		return (0);
 
-	temp = malloc(sizeof(listint_t));
 
-
-	/* save the current header's result to sum variable*/
+	/* save the value of head node to variable*/
 	sum = (*head)->n;
 	temp = (*head)->next;
+	/*set *head next pointer to null*/
 	(*head)->next = NULL;
+	/*free the head*/
 	free(*head);
+	/*set temp as the new head*/
 	*head = temp;
+
 	return (sum);
 
 
