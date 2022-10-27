@@ -22,6 +22,14 @@ int pop_listint(listint_t **head)
 	/*_print_number(*head->n);*/
 	/*_putchar('\n');*/
 
+	/* Handle case when List only has One node*/
+	if ((*head)->next == NULL)
+	{
+		*head = NULL;
+		return (num);
+
+	}
+
 	new = ((*head)->next);
 	free(*head);
 	*head = new;
