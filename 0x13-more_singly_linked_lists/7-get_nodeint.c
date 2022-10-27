@@ -5,7 +5,8 @@
  * @head: a pointer to a linked list head
  * @index: node index to be retrieved
  *
- * Description: Scans through a linked list and retrives the specified index'd node
+ * Description:Scans through a linked list and retrives the specified
+ * index'd node
  *
  * Return: address of new referenced nodes else NULL
  */
