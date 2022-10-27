@@ -13,36 +13,53 @@
 
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	listint_t *lptr, *new, *prev;
-	unsigned int counter;
+	listint_t *newNode;
+	unsigned int size = getNodeSize(*head);
 
-	/* Initialize counter to zero */
-	counter = 0;
-	if (idx == 0)
+	newNode = malloc(sizeof(listint_t));
+
+	newNode->n = n;
+	newNode->next = NULL;
+
+	if (idx > size)
 		return (NULL);
-
-	lptr = (*head);
-	while (lptr != NULL && counter <= idx)/*handle if list is not empty*/
+	else if (idx == 0)
 	{
-		/*traverse to last element scanning for sought after index*/
-
-		{
-			if (counter == idx)
-			{
-				new = malloc(sizeof(listint_t));
-				if (!new)
-					return (NULL);
-				/* Assign Value to new node*/
-				new->n = n;
-				prev->next = new;
-				new->next = lptr;
-				return (*head);
-			}
-			counter++;
-			prev = lptr;
-			lptr = lptr->next;
-		}
+		newNode->next = *head;
+		*head = newNode;
 	}
-	/* if list is empty add new item at the end */
-	return (NULL);
+	else
+	{
+		/* temp used to traverse the List*/
+		listint_t *temp = *head;
+
+		/* traverse till the nth node*/
+		while (--idx)
+			temp = temp->next;
+		/* assign newNode's next to nth node's next*/
+		newNode->next = temp->next;
+		/* assign nth node's next this new node*/
+		temp->next = newNode;
+	}
+	return (*head);
+}
+
+/**
+ * getNodeSize- Finds the size of a Linked List
+ * @head: a pointer to a linked list head
+ *
+ * Description:Scans through a linked list while incrementing the size value
+ *
+ * Return: positive integer else 0
+ */
+unsigned int getNodeSize(listint_t *head)
+{
+	unsigned int size = 0;
+
+	while (head)
+	{
+		head = head->next;
+		size++;
+	}
+	return (size);
 }
