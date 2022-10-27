@@ -14,16 +14,16 @@
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *newNode;
-	unsigned int size = getNodeSize(*head);
 
-	newNode = malloc(sizeof(listint_t));
-
-	newNode->n = n;
-	newNode->next = NULL;
-
-	if (idx > size)
+	/* Initialize counter to zero */
+	counter = 0;
+	
+	if (idx == 0)
 		return (NULL);
-	else if (idx == 0)
+
+
+	lptr = (*head);
+	while (lptr != NULL && counter <= idx)/*handle if list is not empty*/
 	{
 		newNode->next = *head;
 		*head = newNode;
