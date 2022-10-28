@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include "lists.h"
+#include  <stdio.h>
 /**
  * insert_nodeint_at_index- inserts a node in-between nodes in a linked list
  * @head: a pointer to a linked list head
@@ -30,7 +31,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		*head = new;
 		return (*head);
 	}
-	if (((int)idx - (int)size) == -1)
+	else if ((int)idx == (int)size)
 	{
 		*head = add_nodeint_end(head, n);
 		return (*head);
