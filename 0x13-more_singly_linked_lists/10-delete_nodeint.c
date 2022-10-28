@@ -12,34 +12,63 @@
 
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
-	listint_t *prev, *current;
+	listint_t *temp = *head; /* Creating a temporary*/
+	listint_t *del;
+							/* variable pointing to head*/
+	unsigned int listlen, i;
 
-	/* Initialize counter to zero */
-	current = (*head);
-	prev = (*head);
+	listlen = getListSize(*head);
 
-	if (!(*head))
+	if (!*head)
 		return (-1);
-	else if (index == 1)
+
+	if (index == 0)
 	{
-		*head = current->next;
-		free(current);
-		current = NULL;
-		return(0);
+		*head = (*head)->next; /* Advancing the head pointer*/
+		temp->next = NULL;
+		free(temp); /* Node is deleted*/
+		return (1);
+	}
+	/* Handle deletion of the Linked List's Tail*/
+	else if (index >= listlen)
+	{
+		return (-1);
+
 	}
 	else
 	{
-		while (index != 1)
+		for (i = 0; i < index - 1; i++)
 		{
-			prev = current;
-			current = current->next;
-			index--;
+			temp = temp->next;
 		}
-		prev->next = current->next;
-		free(current);
-		current = NULL;
-		return(0);
+		/* Now temp pointer points to the previous node of*/
+		/* the node to be deleted*/
+		del = temp->next; /* del pointer points to the node*/
+		/* to be deleted*/
+		temp->next = temp->next->next;
+		del->next = NULL;
+		free(del); /* Node is deleted*/
+		return (1);
 	}
-	
+}
+/**
+ * getListSize- Captures the Number of nodes in a Linked List
+ * @head: linked list head pointer
+ * Description: This is required in order to check if deletetion is
+ * at an invalid index
+ *
+ * Return: integer number of nodes else 0
+ */
+unsigned int getListSize(listint_t *head)
+{
+	listint_t *temp = head; /* Creating a temporary*/
+	unsigned int size = 0;
 
+	while (temp)
+	{
+		temp = temp->next;
+		size++;
+	}
+
+	return (size);
 }
