@@ -15,17 +15,34 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *lptr, *new, *prev;
 	unsigned int counter;
+	int size;
 
 	/* Initialize counter to zero */
 	counter = 0;
-	if (idx == 0)
-		return (NULL);
+	size = (int) getlistsize(*head);
 
 	if (!*head || !head)
 		return (NULL);
 
+	if (idx == 0)
+	{
+		new = malloc(sizeof(listint_t));
+		if (!new)
+			return (NULL);
+		new->n = n;
+		new->next = *head;
+		*head = new;
+		return (*head);
+	}
+	if (((int)idx - size) == -1)
+	{
+		*head = add_nodeint_end(head, n);
+		return (*head);
+	}
+
 	lptr = (*head);
-	while (lptr != NULL && counter <= idx)/*handle if list is not empty*/
+	while (lptr != NULL && counter <= idx)
+		/*handle if list is not empty*/
 	{
 		/*traverse to last element scanning for sought after index*/
 
@@ -46,6 +63,28 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 			lptr = lptr->next;
 		}
 	}
+
 	/* if list is empty add new item at the end */
 	return (NULL);
+}
+
+
+/**
+ * getlistsize- gets number of nodes
+ * making a list
+ * @head: a pointer to a linked list head
+ *
+ * Return: a positive integer else 0
+ */
+unsigned int getlistsize(listint_t *head)
+{
+	unsigned int size = 0;
+
+	while (head)
+	{
+		head = head->next;
+		size++;
+	}
+
+	return (size);
 }
