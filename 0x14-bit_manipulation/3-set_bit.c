@@ -16,8 +16,6 @@ int set_bit(unsigned long int *n, unsigned int index)
 	unsigned int flag, counter, elapsed_bits, __attribute__((unused)) decimal;
 	int i, indexes;
 	char __attribute__((unused)) bits[32] = {0};
-	char *s;
-	char *b = bits;
 
 	/* initialize temp counter to zero*/
 	elapsed_bits = 0;
@@ -29,23 +27,6 @@ int set_bit(unsigned long int *n, unsigned int index)
 	flag = 0;
 	if (*n == 0 && (int) index > indexes)
 	{
-		bits[index] = 1 + '0';
-	for (counter = 0; counter <= index; counter++)
-	{
-		printf(" %d ", bits[counter]);
-	}
-	printf("\n");
-
-		reverse_array(bits, index );
-		bits[index + 1] = '1';
-	for (counter = 0; counter <= index + 1; counter++)
-	{
-		printf(" %d ", bits[counter]);
-	}
-		decimal = binary_to_uint(bits);
-		*n = decimal;
-		printf("decimal is %d", decimal);
-
 		return (1);
 
 	}
