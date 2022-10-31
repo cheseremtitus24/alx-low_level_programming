@@ -58,7 +58,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 
 
 /**
- * getlistsize- gets number of nodes
+ * getListSize- gets number of nodes
  * making a list
  * @head: a pointer to a linked list head
  *
