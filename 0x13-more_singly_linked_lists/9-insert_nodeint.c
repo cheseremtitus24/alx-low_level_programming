@@ -18,7 +18,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	unsigned int counter, size;
 
 	counter = 0;
-	size = (int) getlistsize(*head);
+	size = (int) getListSize(*head);
 	if (!*head || !head)
 		return (NULL);
 	if (idx == 0)
@@ -64,7 +64,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
  *
  * Return: a positive integer else 0
  */
-unsigned int getlistsize(listint_t *head)
+unsigned int getListSize(listint_t *head)
 {
 	unsigned int size = 0;
 
