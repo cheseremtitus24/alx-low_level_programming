@@ -12,7 +12,10 @@ void print_binary(unsigned long int n)
 
 	/* handle if n is zero */
 	if (n == 0)
+	{
 		_putchar('0');
+		return;
+	}
 	/* Set a flag that will prevent printing of Leading zeroes*/
 	flag = 0;
 	/* assuming 32-bit integer*/
