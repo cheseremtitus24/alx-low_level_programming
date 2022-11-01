@@ -3,7 +3,7 @@
  * print_binary- Converts a Decimal number to Binary and prints it
  * @n: Input Decimal Number
  *
- * Return: void 
+ * Return: void
  */
 
 void print_binary(unsigned long int n)
