@@ -12,6 +12,9 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int decimal = 0;
 	unsigned int base2 = 1;
 
+	if (!b)
+		return (0);
+
 	slen = _strlen_recursion(b);
 	for (i = (slen - 1); i >= 0; i--)
 	{
