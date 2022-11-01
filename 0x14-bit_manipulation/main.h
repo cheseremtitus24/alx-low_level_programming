@@ -12,6 +12,7 @@ void reverse_array(char a[63], int n);
 int set_bit(unsigned long int *n, unsigned int index);
 int clear_bit(unsigned long int *n, unsigned int index);
 unsigned int flip_bits(unsigned long int n, unsigned long int m);
+int get_endianness(void);
 
 /*
  * Structs, enums and unions definitions
