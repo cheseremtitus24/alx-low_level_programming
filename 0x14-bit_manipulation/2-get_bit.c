@@ -13,12 +13,15 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned int mask, flag, counter, elapsed_bits;
 	int i, indexes;
-	char bits[32] = {0};
+	char bits[63] = {0};
 
 	/* initialize temp counter to zero*/
 	elapsed_bits = 0;
 	counter = 0;
 	indexes = 0;
+
+	if (index > 63)
+		return (-1);
 
 	/* handle if n is zero */
 	if (n == 0)
@@ -31,8 +34,8 @@ int get_bit(unsigned long int n, unsigned int index)
 	}
 	/* Set a flag that will prevent printing of Leading zeroes*/
 	flag = 0;
-	/* assuming 32-bit integer*/
-	for (i = 31; i >= 0; i--)
+	/* assuming 64-bit integer*/
+	for (i = 63; i >= 0; i--)
 	{
 		if (!flag)
 			elapsed_bits++;
@@ -84,7 +87,7 @@ int get_bit(unsigned long int n, unsigned int index)
  * Return: void
  */
 
-void reverse_array(char a[32], int n)
+void reverse_array(char a[63], int n)
 {
 	int i, j;
 	char tmp;
