@@ -7,7 +7,7 @@
  *
  * Description: Indexing begins from zero
  *
- * Return: Value of bit at index else -1 
+ * Return: Value of bit at index else -1
  */
 
 int set_bit(unsigned long int *n, unsigned int index)
@@ -22,6 +22,9 @@ int set_bit(unsigned long int *n, unsigned int index)
 	counter = 0;
 	indexes = 0;
 
+	if (index > 63)
+		return (-1);
+
 
 	/* Set a flag that will prevent printing of Leading zeroes*/
 	flag = 0;
@@ -31,7 +34,7 @@ int set_bit(unsigned long int *n, unsigned int index)
 
 	}
 	/* assuming 32-bit integer*/
-	for (i = 31; i >= 0; i--)
+	for (i = 63; i >= 0; i--)
 	{
 		if (!flag)
 			elapsed_bits++;
@@ -64,11 +67,11 @@ int set_bit(unsigned long int *n, unsigned int index)
 		printf(" %c ", bits[counter]);
 	}
 	/* Reverse the array */
-	reverse_array(bits, indexes );
+	reverse_array(bits, indexes);
 	bits[index] = '1';
 	if (indexes > (int) index)
 		{
-		reverse_array(bits, indexes );
+		reverse_array(bits, indexes);
 		bits[indexes + 1] = '\0';
 		decimal = binary_to_uint(bits);
 		/*printf("%d",decimal);*/
@@ -77,7 +80,7 @@ int set_bit(unsigned long int *n, unsigned int index)
 	}
 	else
 	{
-		reverse_array(bits, index );
+		reverse_array(bits, index);
 		bits[index + 1] = '\0';
 		decimal = binary_to_uint(bits);
 		/*printf("%d",decimal);*/
@@ -130,7 +133,6 @@ void reverse_array(char a[32], int n)
 		a[j] = tmp;
 		j--;
 	}
-	
 }
 
 /**
