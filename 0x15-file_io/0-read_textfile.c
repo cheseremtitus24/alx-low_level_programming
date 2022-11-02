@@ -19,7 +19,7 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *buf;
-	ssize_t actualread, fd;
+	ssize_t actualread, fd, sout;
 
 
 	/* Handle case when file pointer is null*/
@@ -40,14 +40,21 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (!buf)
 		return (0);
 	actualread = read(fd, buf, letters);
+	/* Handle if there were errors while reading */
+	if (actualread < 0)
+	{
+		free(buf);
+		return (0);
+	}
 	close(fd);
-
 	buf[letters] = '\0';
-	printf("%s\n", buf);
+	/* write to posix stdout*/
+	sout = write(STDOUT_FILENO, buf, actualread);
+	if (actualread < 0)
+	{
+		free(buf);
+		return (0);
+	}
 	free(buf);
-
-	return (actualread);
-
-
-
+	return (sout);
 }
