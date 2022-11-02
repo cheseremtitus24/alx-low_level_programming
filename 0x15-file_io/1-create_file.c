@@ -17,7 +17,7 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	ssize_t fd;
+	ssize_t fd, t;
 
 
 	/* Handle case when file pointer is null*/
@@ -34,9 +34,17 @@ int create_file(const char *filename, char *text_content)
 	}
 
 	if (!text_content)
-		write(fd, "", 1);
+	{
+		t = write(fd, "", 1);
+		if (t < 0)
+			return (-1);
+	}
 	else
-		write(fd, text_content, strlen(text_content));
+	{
+		t = write(fd, text_content, strlen(text_content));
+		if (t < 0)
+			return (-1);
+	}
 
 	close(fd);
 
