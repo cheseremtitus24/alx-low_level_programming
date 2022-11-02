@@ -7,7 +7,7 @@
 #include <string.h>
 
 /**
- * read_textfile- Function that checks if a character is lowecase
+ * append_text_to_file- Only appends content to a file
  * @filename: Pointer to file to be read
  * @text_content: NULL Terminated char array to write to file
  *
@@ -41,7 +41,6 @@ int append_text_to_file(const char *filename, char *text_content)
 	else
 		write(fd, text_content, strlen(text_content));
 
-	
 	close(fd);
 
 	return (1);

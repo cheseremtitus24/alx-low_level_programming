@@ -10,7 +10,8 @@
  * @filename: Pointer to file to be read
  * @letters: number of characters to read and print
  *
- * Description - reads and returns the number of characters it could read and print 
+ * Description - reads and returns the number of characters
+ * it could read and print
  *
  * Return: an absolute value of an integer
  */
@@ -39,7 +40,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (!buf)
 		return (0);
 	actualread = read(fd, buf, letters);
-	
 	close(fd);
 
 	buf[letters] = '\0';
