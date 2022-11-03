@@ -31,9 +31,9 @@ int main(int ac, char **av)
 	while (counter)
 	{
 		validateread = readtextfile(av[1], BUFFSIZE, &filecontents);
-		if (validateread == 0)
+		if (validateread < 0)
 		{
-			return (0);
+			return (98);
 		}
 		/* We are still reading in file contents*/
 		else
