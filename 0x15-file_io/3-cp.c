@@ -31,10 +31,9 @@ int main(int ac, char **av)
 	while (counter)
 	{
 		validateread = readtextfile(av[1], BUFFSIZE, &filecontents);
-		if (validateread < 0)
+		if (validateread == 0)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
-			return (98);
+			return (0);
 		}
 		/* We are still reading in file contents*/
 		else
@@ -84,33 +83,53 @@ ssize_t readtextfile(const char *filename, size_t letters, char **fcontents)
 {
 	char *buf;
 	ssize_t actualread, fd;
+	int status;
 
 
 	/* Handle case when file pointer is null*/
 	if (!filename)
 	{
-		return (0);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
+		exit(98);
 	}
 	/* read */
 	fd = open(filename, O_RDONLY);
 
 	if (fd < 0)
 	{
-		return (0);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
+		exit(98);
 	}
 
 	buf = malloc(letters);
 	/* handle if dynamic memory allocation fails*/
 	if (!buf)
-		return (0);
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
+		exit(98);
+	}
 	actualread = read(fd, buf, letters);
 	/* Handle if there were errors while reading */
 	if (actualread < 0)
 	{
 		free(buf);
-		return (0);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
+		status = close(fd);
+		if (status < 0)
+		{
+
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", status);
+			exit(100);
+		}
+		exit(98);
 	}
-	close(fd);
+	status = close(fd);
+
+	if (status < 0)
+	{
+
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", status);
+	}
 	buf[letters] = '\0';
 	*fcontents = buf;
 	return (actualread);
@@ -127,41 +146,79 @@ ssize_t readtextfile(const char *filename, size_t letters, char **fcontents)
 int createfile(const char *filename, char *text_content)
 {
 	ssize_t fd, t;
+	int status;
+
+	t = -1;
 
 
 	/* Handle case when file pointer is null*/
 	if (!filename)
 	{
-		return (-1);
+		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", filename);
+		exit(99);
 	}
 	/* write truncate if exists create if non existent*/
-	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0664);
+
+	/* if file exists do not change permissions*/
+	if (access(filename, F_OK) == 0)
+	{
+		/* file exists*/
+		fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0664);
+	}
+	else
+	{
+		/* file doesn't exist*/
+		fd = open(filename, O_CREAT | O_RDWR | O_TRUNC);
+	}
 
 	if (fd < 0)
 	{
-		return (-1);
+		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", filename);
+		exit(99);
 	}
 
+	/* if text content to write is NULL write nothing to file*/
 	if (!text_content)
 	{
 		t = write(fd, "", 1);
 		if (t < 0)
 		{
-			close(fd);
-			return (-1);
+			status = close(fd);
+			if (status < 0)
+			{
+
+				dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", status);
+				exit(100);
+			}
+			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", filename);
+			exit(99);
 		}
 	}
 	else
 	{
+		/* Use a loop to ensure all content is written to destination*/
 		t = write(fd, text_content, strlen(text_content));
 		if (t < 0)
 		{
-			close(fd);
-			return (-1);
+			status = close(fd);
+			if (status < 0)
+			{
+
+				dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", status);
+				exit(100);
+			}
+			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", filename);
+			exit(99);
 		}
 	}
 
-	close(fd);
+	status = close(fd);
+	if (status < 0)
+	{
+
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", status);
+		exit(100);
+	}
 
 	return (1);
 }
