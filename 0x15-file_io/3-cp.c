@@ -4,77 +4,75 @@
 #include <string.h>
 #define BUFFSIZE 1024
 
+int createfile(const char *filename, char *text_content);
+ssize_t readtextfile(const char *filename, size_t letters, char **fcontents);
 /**
  * main - check the code
+ * @ac: Holds the number of passed in arguments
+ * @av: Is an array that holds individual arguments
  *
  * Return: Always 0.
  */
-int createfile(const char *filename, char *text_content);
-ssize_t readtextfile(const char *filename, size_t letters, char** fcontents);
 int main(int ac, char **av)
 {
-    int validateread, counter, wd;
-    char *filecontents;
+	int validateread, counter, wd;
+	char *filecontents;
 
-    if (ac != 3)
-    {
-        dprintf(2, "Usage: %s file_from file_to\n", av[0]);
-        exit(97);
-    }
-    /**
-     * step 1 : read contents of file to malloc memory
-     * step 2 : overwrite contents of to-file
-     */
-    counter = 1;
-    while(counter)
-    {
-	    validateread = readtextfile(av[1], BUFFSIZE, &filecontents);
-	    if (validateread < 0)
-	    {
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
-		return (98);
-	    }
-	    /* We are still reading in file contents*/
-	    else
-	    {
-		    /* write contents to other file*/
-		    /* if counter is 1 initially create the file*/
-		    if (counter == 1)
-		    {
-			    /*dprintf(STDOUT_FILENO, "We are about to write to %s", av[1]);*/
-			    wd = createfile(av[2], filecontents);
-			    /*wd = create_file(av[2], "World");*/
-			    /* successful Write*/
-			    if (wd == 1)
-			    {
-				    free(filecontents);
-				    return (0);
-			    }
-			    else
-			    {
-				    free(filecontents);
-				   /*failed to write thus return 99*/ 
-				    return (99);
-			    }
+	if (ac != 3)
+	{
+		dprintf(2, "Usage: %s file_from file_to\n", av[0]);
+		exit(97);
+	}
+	/**
+	* step 1 : read contents of file to malloc memory
+	* step 2 : overwrite contents of to-file
+	*/
+	counter = 1;
+	while (counter)
+	{
+		validateread = readtextfile(av[1], BUFFSIZE, &filecontents);
+		if (validateread < 0)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+			return (98);
+		}
+		/* We are still reading in file contents*/
+		else
+		{
+			/* write contents to other file*/
+			/* if counter is 1 initially create the file*/
+			if (counter == 1)
+			{
+				/*dprintf(STDOUT_FILENO, "We are about to write to %s", av[1]);*/
+				wd = createfile(av[2], filecontents);
+				/*wd = create_file(av[2], "World");*/
+				/* successful Write*/
+				if (wd == 1)
+				{
+					free(filecontents);
+					return (0);
+				}
+				else
+				{
+					free(filecontents);
+					/*failed to write thus return 99*/
+					return (99);
+				}
 
-		    }
+			}
 
-	    }
-	    /* increment counter*/
-	    counter++;
-    }
+		}
+		/* increment counter*/
+		counter++;
+	}
 
-
-
-    /*res = append_text_to_file(av[1], av[2]);
-    printf("-> %i)\n", res);
-    */
-    return (0);
+	return (0);
 }
 /**
- * read_textfile- Function reads in a text file and outputs it to POSIX stdout  
+ * readtextfile- Function reads in a text file and outputs it to POSIX stdout
  * @filename: Pointer to file to be read
  * @letters: number of characters to read and print
+ * @fcontents: NULL Terminated String to write to out file
  *
  * Description - reads and returns the number of characters
  * it could read and print
@@ -82,7 +80,7 @@ int main(int ac, char **av)
  * Return: an absolute value of an integer
  */
 
-ssize_t readtextfile(const char *filename, size_t letters, char** fcontents)
+ssize_t readtextfile(const char *filename, size_t letters, char **fcontents)
 {
 	char *buf;
 	ssize_t actualread, fd;
