@@ -13,7 +13,7 @@ int createfile(const char *filename, char *text_content);
 ssize_t readtextfile(const char *filename, size_t letters, char** fcontents);
 int main(int ac, char **av)
 {
-    int res, validateread, ed, counter, wd, i;
+    int validateread, counter, wd;
     char *filecontents;
 
     if (ac != 3)
@@ -41,9 +41,9 @@ int main(int ac, char **av)
 		    /* if counter is 1 initially create the file*/
 		    if (counter == 1)
 		    {
-			    //dprintf(STDOUT_FILENO, "We are about to write to %s", av[1]);
+			    /*dprintf(STDOUT_FILENO, "We are about to write to %s", av[1]);*/
 			    wd = createfile(av[2], filecontents);
-			    //wd = create_file(av[2], "World");
+			    /*wd = create_file(av[2], "World");*/
 			    /* successful Write*/
 			    if (wd == 1)
 			    {
@@ -85,7 +85,7 @@ int main(int ac, char **av)
 ssize_t readtextfile(const char *filename, size_t letters, char** fcontents)
 {
 	char *buf;
-	ssize_t actualread, fd, sout;
+	ssize_t actualread, fd;
 
 
 	/* Handle case when file pointer is null*/
