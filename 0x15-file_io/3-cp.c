@@ -163,12 +163,12 @@ int createfile(const char *filename, char *text_content)
 	if (access(filename, F_OK) == 0)
 	{
 		/* file exists*/
-		fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0664);
+		fd = open(filename, O_CREAT | O_RDWR | O_TRUNC);
 	}
 	else
 	{
 		/* file doesn't exist*/
-		fd = open(filename, O_CREAT | O_RDWR | O_TRUNC);
+		fd = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0664);
 	}
 
 	if (fd < 0)
