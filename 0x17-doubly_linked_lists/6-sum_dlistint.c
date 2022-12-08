@@ -3,7 +3,7 @@
 /**
  * sum_dlistint- sums all data values of nodes in a DLList
  * @head: pointer to head of dllist
- * Returns positive integer else 0
+ * Return: positive integer else 0
  */
 int sum_dlistint(dlistint_t *head)
 {
@@ -15,5 +15,5 @@ int sum_dlistint(dlistint_t *head)
 		head = head->next;
 	}
 
-	return (sum);
+	return (result);
 }
