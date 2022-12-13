@@ -6,7 +6,7 @@
 #-fPIC - Position Independent Code Generation makes use of referential addresses
 
 gcc -Wall -pedantic -Werror -Wextra -std=gnu89 -c -fPIC  *.c 
-gcc *.o -shared -o liball.so
+gcc *.o -shared -o libdynamic.so
 rm *.o
 
 # Adding non-standard path so that the system can include CWD in the search for dyn-libs

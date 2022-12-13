@@ -1,2 +1,2 @@
 gcc main.c -c
-gcc main.o -L. -lall -o prog
+gcc main.o -L. -ldynamic -o prog

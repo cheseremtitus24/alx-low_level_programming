@@ -1,0 +1,1 @@
+nm -D libdynamic.so
