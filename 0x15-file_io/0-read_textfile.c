@@ -6,7 +6,7 @@
 #include <unistd.h>
 
 /**
- * read_textfile- Function that checks if a character is lowecase
+ * read_textfile- Function that reads in a text file into a buffer
  * @filename: Pointer to file to be read
  * @letters: number of characters to read and print
  *
