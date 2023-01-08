@@ -4,7 +4,7 @@
 #include "hash_tables.h"
 
 /**
- * main - check the code for
+ * main - check the code
  *
  * Return: Always EXIT_SUCCESS.
  */
@@ -13,8 +13,9 @@ int main(void)
     hash_table_t *ht;
 
     ht = hash_table_create(1024);
-    printf("%p\n", (void *)ht);
-    printf("array size %s\n",ht->array[0]);
-    printf("%lu",ht->size);
+    hash_table_set(ht, "hetairas", "cool");
+    hash_table_set(ht, "mentioner", "people");
+    hash_table_set(ht, "heliotropes", "Gaming");
+    hash_table_set(ht, "neurospora", "Customers");
     return (EXIT_SUCCESS);
 }

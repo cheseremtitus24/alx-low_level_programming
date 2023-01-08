@@ -50,7 +50,6 @@ hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		temp_node->next = ht->array[hashmap_index];
 		/* set temp as the new head */
 		ht->array[hashmap_index] = temp_node;
-		free(temp_node);
 	}
 	return (1);
 }
