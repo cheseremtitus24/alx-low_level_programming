@@ -19,11 +19,13 @@
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
+	hash_table_t *new_hashmap;
+
 	if (size < 1)
 		return (NULL);
 
 	/* Create a hash table */
-	hash_table_t *new_hashmap = malloc(size * sizeof(hash_table_t));
+	new_hashmap = malloc(size * sizeof(hash_table_t));
 
 	/* Verify that the new hash memory location was successful*/
 	if (new_hashmap == NULL)
