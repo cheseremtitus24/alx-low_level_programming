@@ -27,10 +27,10 @@ hash_table_t *hash_table_create(unsigned long int size)
 
 	/* Create a hash table */
 	new_hashmap = malloc(sizeof(hash_table_t));
-	new_hashmap->array = malloc(size * sizeof(hash_node_t));
+	new_hashmap->array = calloc(size, sizeof(hash_node_t));
 
 	/* Verify that the new hash memory location was successful*/
-	if (new_hashmap->array == NULL)
+	if (new_hashmap == NULL)
 	{
 		/* Memory location failed thus return NULL*/
 		return (NULL);
