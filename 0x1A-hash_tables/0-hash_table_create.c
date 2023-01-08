@@ -28,6 +28,8 @@ hash_table_t *hash_table_create(unsigned long int size)
 		/* Memory location failed thus return NULL*/
 		return (NULL);
 	}
+	/* Initialize the table entries with NULL*/
+	memset(new_hashmap, 0, sizeof(hash_table_t) * size);
 
 	return (new_hashmap);
 
