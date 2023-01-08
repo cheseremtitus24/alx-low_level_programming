@@ -17,7 +17,7 @@ unsigned long int key_index(const unsigned char *key, unsigned long int size)
 
 	/* compute and return the modulus*/
 	if (!key)
-		return (EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 
 	hash = hash_djb2(key);
 
