@@ -27,7 +27,6 @@ hash_table_t *hash_table_create(unsigned long int size)
 
 	/* Create a hash table */
 	new_hashmap = malloc(sizeof(hash_table_t));
-	new_hashmap->array = calloc(size, sizeof(hash_node_t));
 
 	/* Verify that the new hash memory location was successful*/
 	if (new_hashmap == NULL)
@@ -35,14 +34,20 @@ hash_table_t *hash_table_create(unsigned long int size)
 		/* Memory location failed thus return NULL*/
 		return (NULL);
 	}
+	new_hashmap->size = size;
 	/* Initialize the table entries with NULL*/
-	for (i = 0; i < size; i++)
+	new_hashmap->array = calloc(size, sizeof(hash_node_t));
+	if (!new_hashmap->array)
+	{
+		return (NULL);
+	}
+
+	for (i = 0; i < new_hashmap->size; i++)
 	{
 		new_hashmap->array[i] = NULL;
 	}
 
 	/* save the size of the hashmap*/
-	new_hashmap->size = size;
 
 
 	return (new_hashmap);
