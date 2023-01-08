@@ -20,7 +20,6 @@
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *new_hashmap;
-	unsigned long int i;
 
 	if (size < 0)
 		return (NULL);
@@ -35,8 +34,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 		return (NULL);
 	}
 	/* Initialize the table entries with NULL*/
-	for (i = 0; i < size; i++)
-		new_hashmap->array[i] = NULL;
+	memset(new_hashmap, 0, sizeof(hash_table_t) * size);
 
 	return (new_hashmap);
 
