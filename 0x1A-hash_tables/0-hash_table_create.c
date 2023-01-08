@@ -20,21 +20,30 @@
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *new_hashmap;
+	unsigned long int i;
 
 	if (size == 0)
 		exit(EXIT_FAILURE);
 
 	/* Create a hash table */
-	new_hashmap = malloc(size * sizeof(hash_table_t));
+	new_hashmap = malloc(sizeof(hash_table_t));
+	new_hashmap->array = malloc(size * sizeof(hash_node_t));
 
 	/* Verify that the new hash memory location was successful*/
-	if (new_hashmap == NULL)
+	if (new_hashmap->array == NULL)
 	{
 		/* Memory location failed thus return NULL*/
 		return (NULL);
 	}
 	/* Initialize the table entries with NULL*/
-	memset(new_hashmap, 0, sizeof(hash_table_t) * size);
+	for (i = 0; i < size; i++)
+	{
+		new_hashmap->array[i] = NULL;
+	}
+
+	/* save the size of the hashmap*/
+	new_hashmap->size = size;
+
 
 	return (new_hashmap);
 
