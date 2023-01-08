@@ -19,6 +19,9 @@
  */
 hash_table_t *hash_table_create(unsigned long int size)
 {
+	if (size < 1)
+		return (NULL);
+
 	/* Create a hash table */
 	hash_table_t *new_hashmap = malloc(size * sizeof(hash_table_t));
 
