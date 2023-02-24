@@ -8,12 +8,8 @@ OBJ=$(SRC:.c=.o)
 NAME=school
 RM=rm -rf
 
-.PHONY: all
-all: $(NAME)
-
-$(NAME): $(OBJ)
+all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-
 
 .PHONY: clean
 clean:
@@ -23,7 +19,7 @@ oclean:
 	$(RM) $(OBJ)
 # deletes vim temp files, obj and exec files
 .PHONY: fclean
-fclean:
-	$(RM)  $(OBJ) *.c~ $(NAME)
+fclean: clean oclean
+
 .PHONY: re
 re: oclean all
