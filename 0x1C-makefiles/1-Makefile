@@ -1,0 +1,15 @@
+# compiles Top-Down
+# Defining Variables
+
+# compiler
+CC=gcc
+SRC=main.c school.c
+
+.PHONY: all
+all: school
+
+school: $(SRC) m.h
+	$(CC) school.c main.c -o school
+
+
+
