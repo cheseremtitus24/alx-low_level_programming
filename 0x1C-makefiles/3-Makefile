@@ -1,0 +1,37 @@
+# compiles Top-Down
+# Defining Variables
+
+# compiler
+CC=gcc
+SRC=main.c school.c
+OBJ=main.o school.o
+NAME=school
+RM=rm -rf
+
+.PHONY: all
+all: school
+
+school: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+main.o: main.c m.h
+	$(CC) -c -o main.o main.c
+
+school.o: school.c m.h
+	$(CC) -c -o school.o school.c 
+
+
+.PHONY: clean
+clean:
+	$(RM) *.c~
+.PHONY: oclean
+oclean:
+	$(RM) $(OBJ)
+# deletes vim temp files, obj and exec files
+.PHONY: fclean
+fclean:
+	$(RM)  $(OBJ) *.c~ $(NAME)
+.PHONY: re
+re:
+	$(RM) $(OBJ) *.c~ school
+	all
