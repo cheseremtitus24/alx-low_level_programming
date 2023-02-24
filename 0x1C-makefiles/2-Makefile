@@ -7,9 +7,6 @@ SRC=main.c school.c
 OBJ=main.o school.o
 NAME=school
 
-.PHONY: all
-all: $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
 
 school: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
@@ -20,4 +17,6 @@ main.o: main.c m.h
 school.o: school.c m.h
 	$(CC) -c -o school.o school.c 
 
-
+.PHONY: all
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
