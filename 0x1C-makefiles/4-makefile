@@ -11,7 +11,7 @@ CFLAGS=-Wall -Werror -Wextra -pedantic
 
 # builds executable
 all: $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(OBJ) -o $(NAME)
 
 # deletes all Emacs and vim temp files along with executable
 .PHONY: clean
