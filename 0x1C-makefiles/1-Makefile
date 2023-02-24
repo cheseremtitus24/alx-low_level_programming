@@ -7,9 +7,8 @@ SRC=main.c school.c
 
 .PHONY: all
 all: school
-
 school: $(SRC) m.h
-	$(CC) main.c school.c -o school
+	$(CC) $(SRC) -o school
 
 
 
