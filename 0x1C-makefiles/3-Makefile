@@ -17,7 +17,7 @@ $(NAME): $(OBJ)
 
 .PHONY: clean
 clean:
-	$(RM) *.c~
+	$(RM) *.c~ $(NAME)
 .PHONY: oclean
 oclean:
 	$(RM) $(OBJ)
@@ -27,5 +27,5 @@ fclean:
 	$(RM)  $(OBJ) *.c~ $(NAME)
 .PHONY: re
 re:
-	$(RM) $(OBJ) *.c~ $(NAME)
+	$(RM) $(OBJ) 
 	all
