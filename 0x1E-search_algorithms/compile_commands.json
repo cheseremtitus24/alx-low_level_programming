@@ -1,0 +1,32 @@
+[
+ {
+  "directory": "/home/cheserem/alx-low_level_programming/0x1E-search_algorithms",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-pedantic",
+   "-c",
+   "-o",
+   "0-main.o",
+   "0-main.c"
+  ],
+  "file": "0-main.c"
+ },
+ {
+  "directory": "/home/cheserem/alx-low_level_programming/0x1E-search_algorithms",
+  "arguments": [
+   "gcc",
+   "-Wall",
+   "-Werror",
+   "-Wextra",
+   "-pedantic",
+   "-c",
+   "-o",
+   "0-linear.o",
+   "0-linear.c"
+  ],
+  "file": "0-linear.c"
+ }
+]
