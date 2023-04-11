@@ -1,0 +1,31 @@
+# compiles Top-Down
+# Defining Variables
+
+# compiler
+CC=gcc
+SRC=1-main.c 1-binary.c
+OBJ=$(SRC:.c=.o) 
+NAME=school
+RM=rm -rf
+CFLAGS=-Wall -Werror -Wextra -pedantic
+
+# builds executable
+all: $(OBJ) search_algos.h
+	$(CC) $(CFLAGS) search_algos.h $(OBJ) -o $(NAME)
+
+# deletes all Emacs and vim temp files along with executable
+.PHONY: clean
+clean:
+	$(RM) *~ $(NAME)
+
+# deletes all object files 
+.PHONY: oclean
+oclean:
+	$(RM) $(OBJ)
+# deletes vim temp files, obj and exec files
+.PHONY: fclean
+fclean: clean oclean
+
+# forces recompilation of all source files
+.PHONY: re
+re: oclean all
